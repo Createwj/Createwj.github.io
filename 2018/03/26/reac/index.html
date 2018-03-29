@@ -184,7 +184,22 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                
+                <h3 id="react语法-参考"><a href="#react语法-参考" class="headerlink" title="react语法 参考"></a>react语法 <a href="http://xgfe.github.io/2015/12/21/felix/react-first-kiss/" target="_blank" rel="noopener">参考</a></h3><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><h4 id="生命周期的三个状态"><a href="#生命周期的三个状态" class="headerlink" title="生命周期的三个状态"></a>生命周期的三个状态</h4><ul>
+<li>Mounting       <code>已经插入真实的DOM</code></li>
+<li>Updating       <code>正在被重新渲染</code></li>
+<li>Unmounting     <code>已经移除真实DOM</code></li>
+</ul>
+<h4 id="react为每个状态提供两种函数-will-进入状态之前-did-进入状态之后"><a href="#react为每个状态提供两种函数-will-进入状态之前-did-进入状态之后" class="headerlink" title="react为每个状态提供两种函数   will/进入状态之前 did/进入状态之后"></a>react为每个状态提供两种函数   <code>will/进入状态之前 did/进入状态之后</code></h4><ul>
+<li>componentWillMount()</li>
+<li>componentDidMount()</li>
+<li>componentWillUpdate(object nextProps, object nextState)</li>
+<li>componentDidUpdate(object prevProps, object prevState)</li>
+<li>componentWillUnmount()</li>
+</ul>
+<h4 id="特殊处理的钩子函数"><a href="#特殊处理的钩子函数" class="headerlink" title="特殊处理的钩子函数"></a>特殊处理的钩子函数</h4><p>componentWillReceiveProps(object nextProps)：<code>已加载组件收到新的参数时调用</code><br>shouldComponentUpdate(object nextProps, object nextState)：<code>组件判断是否重新渲染时调用</code></p>
+<h3 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h3><h4 id="父组件通信"><a href="#父组件通信" class="headerlink" title="父组件通信"></a>父组件通信</h4><pre><code>`子组件通过props可以访问父组件的参数`
+</code></pre><h4 id="非父子组件通信"><a href="#非父子组件通信" class="headerlink" title="非父子组件通信"></a>非父子组件通信</h4><pre><code>使用全局事件 Pub/Sub 模式，在 componentDidMount 里面订阅事件，在 componentWillUnmount 里面取消订阅，当收到事件触发的时候调用 setState 更新 UI。这种模式在复杂的系统里面可能会变得难以维护，对于比较复杂的应用，推荐使用类似 Flux 这种单项数据流架构。
+</code></pre>
                 <hr>
                 
 
@@ -228,7 +243,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#react语法-参考"><span class="toc-text">react语法 参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-text">生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#生命周期的三个状态"><span class="toc-text">生命周期的三个状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react为每个状态提供两种函数-will-进入状态之前-did-进入状态之后"><span class="toc-text">react为每个状态提供两种函数   will/进入状态之前 did/进入状态之后</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊处理的钩子函数"><span class="toc-text">特殊处理的钩子函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件通信"><span class="toc-text">组件通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#父组件通信"><span class="toc-text">父组件通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非父子组件通信"><span class="toc-text">非父子组件通信</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
