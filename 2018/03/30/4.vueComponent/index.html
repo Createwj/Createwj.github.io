@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        beijing[置顶]｜undefined
+        vue-cli 基本安装配置｜undefined
         
     </title>
 
-    <link rel="canonical" href="https://createwj.github.io/index.html/2018/03/29/1/">
+    <link rel="canonical" href="https://createwj.github.io/index.html/2018/03/30/4.vueComponent/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -153,21 +153,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>beijing[置顶]</h1>
+                    <h1>vue-cli 基本安装配置</h1>
                     
                     <span class="meta">
                          作者 新城
                         <span>
-                          日期 2018-03-29
+                          日期 2018-03-30
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#Movies"
-                           title="Movies">Movies</a>
-                        
-                        <a class="tag" href="/tags/#Life"
-                           title="Life">Life</a>
+                        <a class="tag" href="/tags/#vue-cli"
+                           title="vue-cli">vue-cli</a>
                         
                     </div>
                 </div>
@@ -176,7 +173,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            beijing[置顶]
+            vue-cli 基本安装配置
         </span>
     </div>
 </header>
@@ -187,15 +184,45 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="q"><a href="#q" class="headerlink" title="q"></a>q</h3>
+                <h3 id="生成vue-cli项目"><a href="#生成vue-cli项目" class="headerlink" title="生成vue-cli项目"></a>生成vue-cli项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 全局安装vue-cli</span><br><span class="line">npm install -g vue-cli</span><br><span class="line"></span><br><span class="line">// 初始化vue-cli脚手架项目</span><br><span class="line">vue init webpack</span><br></pre></td></tr></table></figure>
+<h3 id="根据个人习惯安装依赖"><a href="#根据个人习惯安装依赖" class="headerlink" title="根据个人习惯安装依赖"></a>根据个人习惯安装依赖</h3><h4 id="css：stylus"><a href="#css：stylus" class="headerlink" title="css：stylus"></a>css：stylus</h4><pre><code>devDependencies:中添加
+    &quot;stylus&quot;: &quot;^0.54.5&quot;,
+    &quot;stylus-loader&quot;: &quot;^3.0.1&quot;,
+</code></pre><h4 id="ajax：axios"><a href="#ajax：axios" class="headerlink" title="ajax：axios"></a>ajax：axios</h4><pre><code>dependencies：
+    &quot;axios&quot;：&quot;^0.16.0&quot;
+</code></pre><h4 id="阻止移动端点击300ms延迟：fastclick"><a href="#阻止移动端点击300ms延迟：fastclick" class="headerlink" title="阻止移动端点击300ms延迟：fastclick"></a>阻止移动端点击300ms延迟：fastclick</h4><pre><code>dependencies：
+    &quot;fastclick&quot;：&quot;^1.0.6&quot;
+</code></pre><h4 id="防止在webapp中出现下拉阴影：better-scroll"><a href="#防止在webapp中出现下拉阴影：better-scroll" class="headerlink" title="防止在webapp中出现下拉阴影：better-scroll"></a>防止在webapp中出现下拉阴影：better-scroll</h4><pre><code>dependencies：
+    &quot;better-scroll&quot;: &quot;^1.8.4&quot;,
+</code></pre><h4 id="将页面生成图片"><a href="#将页面生成图片" class="headerlink" title="将页面生成图片"></a>将页面生成图片</h4><pre><code>dependencies：
+    &quot;html2canvas&quot;: &quot;^1.0.0-alpha.10&quot;,
+</code></pre><h4 id="vuex状态管理"><a href="#vuex状态管理" class="headerlink" title="vuex状态管理"></a>vuex状态管理</h4><pre><code>dependencies：
+    &quot;vuex&quot;: &quot;^2.3.1&quot;,
+</code></pre><h4 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h4><pre><code>dependencies：
+       &quot;vue-lazyload&quot;: &quot;^1.0.3&quot;,
+</code></pre><h3 id="插件的基本使用方法"><a href="#插件的基本使用方法" class="headerlink" title="插件的基本使用方法"></a>插件的基本使用方法</h3><h4 id="css-stylus的基本使用"><a href="#css-stylus的基本使用" class="headerlink" title="css:stylus的基本使用"></a><code>css:stylus的基本使用</code></h4><pre><code>需要在style标签中添加  `scoped lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;`
+scoped  表示在编译的时候 会在class后生成随机的数字防止重名
+</code></pre><h4 id="axios的基本使用"><a href="#axios的基本使用" class="headerlink" title="axios的基本使用"></a><code>axios的基本使用</code></h4><pre><code>在src目录下面添加API文件夹  将需要请求的接口统一放到api文件夹下面
+`结合promise`异步的将请求获取到的数据返回到相对应的组件中、
+</code></pre><h4 id="fastclick的基本使用"><a href="#fastclick的基本使用" class="headerlink" title="fastclick的基本使用"></a><code>fastclick的基本使用</code></h4><pre><code>在main.js中  import fastclick from &apos;fastclick&apos;
+fastclick.attach(document.body)
+</code></pre><h4 id="better-scroll的基本使用"><a href="#better-scroll的基本使用" class="headerlink" title="better-scroll的基本使用"></a><code>better-scroll的基本使用</code></h4><pre><code>功能相对比较强大 见github组件
+&apos;上下惯性滚动&apos;  &apos;上拉下拉刷新&apos;  &apos;轮播图&apos;  &apos;通信录&apos;
+</code></pre><h4 id="html2canvas-将页面生成图片的插件"><a href="#html2canvas-将页面生成图片的插件" class="headerlink" title="html2canvas 将页面生成图片的插件"></a><code>html2canvas 将页面生成图片的插件</code></h4><pre><code>自行文档
+</code></pre><h4 id="vue-lazyload-图片懒加载"><a href="#vue-lazyload-图片懒加载" class="headerlink" title="vue-lazyload 图片懒加载"></a><code>vue-lazyload 图片懒加载</code></h4><pre><code>在main.js中 导入 import vueLazyload from &apos;vue-lazyload&apos;
+     Vue.use(vueLazyload, {              // 设置图片懒加载
+        loading: require(&apos;@/common/image/default.png&apos;)
+     })
+</code></pre><h3 id="eslint-基本配置"><a href="#eslint-基本配置" class="headerlink" title="eslint 基本配置"></a>eslint 基本配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&apos;rules&apos;: &#123;</span><br><span class="line">    &apos;arrow-parens&apos;: 0,  // 箭头函数参数使用圆括号</span><br><span class="line"></span><br><span class="line">    &apos;generator-star-spacing&apos;: 0,</span><br><span class="line"></span><br><span class="line">    &apos;no-debugger&apos;: process.env.NODE_ENV === &apos;production&apos; ? 2 : 0,   // 生产环境的禁止使用 否则开发环境可以使用</span><br><span class="line"></span><br><span class="line">    &apos;eol-last&apos;: 0,  // 禁止文件尾行出现空行 文件以单一的换行符结束</span><br><span class="line"></span><br><span class="line">    &apos;space-before-function-paren&apos;: 0  // 在function 括号之前出现0个空格</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
                 <hr>
                 
 
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/03/30/4.vueComponent/" data-toggle="tooltip" data-placement="top"
-                           title="vue-cli 基本安装配置">&larr; 上一篇</a>
+                        <a href="/2018/03/30/1/" data-toggle="tooltip" data-placement="top"
+                           title="beijing">&larr; 上一篇</a>
                     </li>
                     
                     
@@ -236,7 +263,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#q"><span class="toc-text">q</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成vue-cli项目"><span class="toc-text">生成vue-cli项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据个人习惯安装依赖"><span class="toc-text">根据个人习惯安装依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#css：stylus"><span class="toc-text">css：stylus</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ajax：axios"><span class="toc-text">ajax：axios</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#阻止移动端点击300ms延迟：fastclick"><span class="toc-text">阻止移动端点击300ms延迟：fastclick</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#防止在webapp中出现下拉阴影：better-scroll"><span class="toc-text">防止在webapp中出现下拉阴影：better-scroll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将页面生成图片"><span class="toc-text">将页面生成图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vuex状态管理"><span class="toc-text">vuex状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片懒加载"><span class="toc-text">图片懒加载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件的基本使用方法"><span class="toc-text">插件的基本使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#css-stylus的基本使用"><span class="toc-text">css:stylus的基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#axios的基本使用"><span class="toc-text">axios的基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fastclick的基本使用"><span class="toc-text">fastclick的基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#better-scroll的基本使用"><span class="toc-text">better-scroll的基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#html2canvas-将页面生成图片的插件"><span class="toc-text">html2canvas 将页面生成图片的插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue-lazyload-图片懒加载"><span class="toc-text">vue-lazyload 图片懒加载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eslint-基本配置"><span class="toc-text">eslint 基本配置</span></a></li></ol>
                 </div>
             </div>
         </div>
