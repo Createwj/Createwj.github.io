@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="描述">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="新城" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        python线程｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://createwj.github.io/index.html/2017/08/31/24.python线程/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/WechatIMG10.jpeg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    新城
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">分类</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/about/">关于我</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>python线程</h1>
+                    
+                    <span class="meta">
+                         作者 新城
+                        <span>
+                          日期 2017-08-31
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#python"
+                           title="python">python</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            python线程
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><p>多任务可以由多进程完成，也可以由一个进程内的多线程完成</p>
+<p>Python的标准库提供了两个模块：_thread和threading，_thread是低级模块，<br>threading是高级模块，对_thread进行了封装。绝大多数情况下，我们只需要使用threading这个高级模块<br><a id="more"></a></p>
+<p>启动一个线程就是把一个函数传入并创建Thread实例，然后调用start()开始执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import time, threading    # 新线程执行的代码:</span><br><span class="line">def loop():</span><br><span class="line">    print(&apos;thread %s is running...&apos; % threading.current_thread().name)</span><br><span class="line">    n = 0</span><br><span class="line">    while n &lt; 5:</span><br><span class="line">        n = n + 1</span><br><span class="line">        print(&apos;thread %s &gt;&gt;&gt; %s&apos; % (threading.current_thread().name, n))</span><br><span class="line">        time.sleep(1)</span><br><span class="line">    print(&apos;thread %s ended.&apos; % threading.current_thread().name)</span><br><span class="line"></span><br><span class="line">print(&apos;thread %s is running...&apos; % threading.current_thread().name)</span><br><span class="line">t = threading.Thread(target=loop, name=&apos;LoopThread&apos;)</span><br><span class="line">t.start()</span><br><span class="line">t.join()</span><br><span class="line">print(&apos;thread %s ended.&apos; % threading.current_thread().name)</span><br></pre></td></tr></table></figure>
+<p><strong>执行结果</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">thread MainThread is running...</span><br><span class="line">thread LoopThread is running...</span><br><span class="line">thread LoopThread &gt;&gt;&gt; 1</span><br><span class="line">thread LoopThread &gt;&gt;&gt; 2</span><br><span class="line">thread LoopThread &gt;&gt;&gt; 3</span><br><span class="line">thread LoopThread &gt;&gt;&gt; 4</span><br><span class="line">thread LoopThread &gt;&gt;&gt; 5</span><br><span class="line">thread LoopThread ended.</span><br><span class="line">thread MainThread ended.</span><br></pre></td></tr></table></figure></p>
+<p>由于任何进程默认就会启动一个线程，我们把该线程称为主线程，主线程又可以启动新的线程，<br>Python的threading模块有个current_thread()函数，它永远返回当前线程的实例。主线程实例的名<br>字叫MainThread，子线程的名字在创建时指定，我们用LoopThread命名子线程。名字仅仅在打印时用来<br>显示，完全没有其他意义，如果不起名字Python就自动给线程命名为Thread-1，Thread-2……</p>
+<h3 id="lock"><a href="#lock" class="headerlink" title="lock"></a>lock</h3><p>多线程和多进程最大的不同在于，多进程中，同一个变量，各自有一份拷贝存在于<br>每个进程中，互不影响，而多线程中，所有变量都由所有线程共享，所以，任何一个变量<br>都可以被任何一个线程修改，因此，线程之间共享数据最大的危险在于多个线程同时<br>改一个变量，把内容给改乱了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import time, threading</span><br><span class="line"></span><br><span class="line"># 假定这是你的银行存款:</span><br><span class="line">balance = 0</span><br><span class="line"></span><br><span class="line">def change_it(n):</span><br><span class="line">    # 先存后取，结果应该为0:</span><br><span class="line">    global balance</span><br><span class="line">    balance = balance + n</span><br><span class="line">    balance = balance - n</span><br><span class="line"></span><br><span class="line">def run_thread(n):</span><br><span class="line">    for i in range(100000):</span><br><span class="line">        change_it(n)</span><br><span class="line"></span><br><span class="line">t1 = threading.Thread(target=run_thread, args=(5,))</span><br><span class="line">t2 = threading.Thread(target=run_thread, args=(8,))</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line">print(balance)</span><br></pre></td></tr></table></figure>
+<p>我们定义了一个共享变量balance，初始值为0，并且启动两个线程，先存后取，理论上结果应该为0<br>，但是，由于线程的调度是由操作系统决定的，当t1、t2交替执行时，只要循环次数足够多，balance的结果就<br>不一定是0了。</p>
+<p>原因是因为高级语言的一条语句在CPU执行时是若干条语句，即使一个简单的计算:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">balance = balance + n</span><br></pre></td></tr></table></figure></p>
+<p>也分两步：</p>
+<p>计算balance + n，存入临时变量中；<br>将临时变量的值赋给balance。<br>也就是可以看成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = balance + n    #赋值给临时变量</span><br><span class="line">balance = x</span><br></pre></td></tr></table></figure></p>
+<p><strong>由于x是局部变量，两个线程各自都有自己的x，当代码正常执行时：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">初始值 balance = 0</span><br><span class="line"></span><br><span class="line">t1: x1 = balance + 5 # x1 = 0 + 5 = 5</span><br><span class="line">t1: balance = x1     # balance = 5</span><br><span class="line">t1: x1 = balance - 5 # x1 = 5 - 5 = 0</span><br><span class="line">t1: balance = x1     # balance = 0</span><br><span class="line"></span><br><span class="line">t2: x2 = balance + 8 # x2 = 0 + 8 = 8</span><br><span class="line">t2: balance = x2     # balance = 8</span><br><span class="line">t2: x2 = balance - 8 # x2 = 8 - 8 = 0</span><br><span class="line">t2: balance = x2     # balance = 0</span><br><span class="line"></span><br><span class="line">结果 balance = 0          #正常</span><br></pre></td></tr></table></figure></p>
+<p>但是t1和t2是交替运行的，如果操作系统以下面的顺序执行t1、t2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">初始值 balance = 0</span><br><span class="line"></span><br><span class="line">t1: x1 = balance + 5  # x1 = 0 + 5 = 5</span><br><span class="line"></span><br><span class="line">t2: x2 = balance + 8  # x2 = 0 + 8 = 8</span><br><span class="line">t2: balance = x2      # balance = 8</span><br><span class="line"></span><br><span class="line">t1: balance = x1      # balance = 5</span><br><span class="line">t1: x1 = balance - 5  # x1 = 5 - 5 = 0</span><br><span class="line">t1: balance = x1      # balance = 0</span><br><span class="line"></span><br><span class="line">t2: x2 = balance - 8  # x2 = 0 - 8 = -8</span><br><span class="line">t2: balance = x2   # balance = -8</span><br><span class="line"></span><br><span class="line">结果 balance = -8             #运行结果异常</span><br></pre></td></tr></table></figure>
+<p>两个线程同时一存一取，就可能导致余额不对，你肯定不希望你的银行存款莫名其妙地<br>变成了负数，所以，我们必须确保一个线程在修改balance的时候，别的线程一定不能改</p>
+<p>如果我们要确保balance计算正确，就要给<strong>change_it()上一把锁</strong>，当某个线程开始执行change_it()时，<br>我们说，该线程因为获得了锁，因此其他线程<strong>不能同时执行change_it()</strong>，只能等待，直到锁被释放后，<br>获得该锁以后才能改。由于锁只有一个，无论多少线程，同一时刻最多只有一个线程持有该锁，所以，<br>不会造成修改的冲突。创建一个锁就是通过<strong>threading.Lock()</strong>来实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">balance = 0</span><br><span class="line">lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">def run_thread(n):</span><br><span class="line">    for i in range(100000):</span><br><span class="line">        lock.acquire()          # 先要获取锁:</span><br><span class="line">        try:</span><br><span class="line">            change_it(n)        # 放心地改吧:</span><br><span class="line">        finally:</span><br><span class="line">            lock.release()      # 改完了一定要释放锁:</span><br></pre></td></tr></table></figure>
+<p>当多个线程同时执行lock.acquire()时，只有一个线程能成功地获取锁，然后继续执行代码，<br>其他线程就继续等待直到获得锁为止。</p>
+<p>获得锁的线程用完后一定要释放锁，否则那些苦苦等待锁的线程将永远等待下去，成为死线程。<br>所以我们用try…finally来确保锁一定会被释放</p>
+<p>锁的好处就是确保了某段关键代码只能由一个线程从头到尾完整地执行，坏处当然也很多，首先是阻<br>止了多线程并发执行，包含锁的某段代码实际上只能以单线程模式执行，效率就大大地下降了。其次，<br>由于可以存在多个锁，不同的线程持有不同的锁，并试图获取对方持有的锁时，可能会造成死锁，导致多<br>个线程全部挂起，既不能执行，也无法结束，只能靠操作系统强制终止</p>
+<p><strong>小结</strong></p>
+<p>多线程编程，模型复杂，容易发生冲突，必须用锁加以隔离，同时，又要小心死锁的发生。</p>
+<p>Python解释器由于设计时有GIL全局锁，导致了多线程无法利用多核。多线程的并发在Python中就是一个美丽的梦。</p>
+<h3 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h3><p>在多线程环境下，每个线程都有自己的数据。一个线程使用自己的局部变量比使用全局变量好，因为<br>局部变量只有线程自己能看见，不会影响其他线程，而全局变量的修改必须加锁。</p>
+<p>局部变量也有问题，就是在函数调用的时候，传递起来很麻烦<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def process_student(name):</span><br><span class="line">    std = Student(name)</span><br><span class="line">    # std是局部变量，但是每个函数都要用它，因此必须传进去：</span><br><span class="line">    do_task_1(std)</span><br><span class="line">    do_task_2(std)</span><br><span class="line"></span><br><span class="line">def do_task_1(std):</span><br><span class="line">    do_subtask_1(std)</span><br><span class="line">    do_subtask_2(std)</span><br><span class="line"></span><br><span class="line">def do_task_2(std):</span><br><span class="line">    do_subtask_2(std)</span><br><span class="line">    do_subtask_2(std)</span><br></pre></td></tr></table></figure></p>
+<p>每个函数一层一层调用都这么传参数那还得了？用全局变量？也不行，因为每个线程处理<br>不同的Student对象，不能共享。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line"></span><br><span class="line"># 创建全局ThreadLocal对象:</span><br><span class="line">local_school = threading.local()    #是一个ThreadLocal对象</span><br><span class="line"></span><br><span class="line">def process_student():    # 获取当前线程关联的student:</span><br><span class="line">    std = local_school.student</span><br><span class="line">    print(&apos;Hello, %s (in %s)&apos; % (std, threading.current_thread().name))</span><br><span class="line"></span><br><span class="line">def process_thread(name):    # 绑定ThreadLocal的student:</span><br><span class="line">    local_school.student = name</span><br><span class="line">    process_student()</span><br><span class="line"></span><br><span class="line">t1 = threading.Thread(target= process_thread, args=(&apos;Alice&apos;,), name=&apos;Thread-A&apos;)</span><br><span class="line">t2 = threading.Thread(target= process_thread, args=(&apos;Bob&apos;,), name=&apos;Thread-B&apos;)</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br></pre></td></tr></table></figure>
+<p>执行结果<br>Hello, Alice (in Thread-A)<br>Hello, Bob (in Thread-B)</p>
+<p>全局变量local_school就是一个ThreadLocal对象，每个Thread对它都可以读写student属性，<br>但互不影响。你可以把local_school看成全局变量，但每个属性如local_school.student都是<br>线程的局部变量，可以任意读写而互不干扰，也不用管理锁的问题，ThreadLocal内部会处理。</p>
+<p><strong>ThreadLocal最常用的地方就是为每个线程绑定一个数据库连接，HTTP请求，用户身份信息等，<br>这样一个线程的所有调用到的处理函数都可以非常方便地访问这些资源</strong></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/01/25.python分布式进程/" data-toggle="tooltip" data-placement="top"
+                           title="python分布式进程">&larr; 上一篇</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/08/31/23.pyhton进程和线程/" data-toggle="tooltip" data-placement="top"
+                           title="进程和线程">下一篇 &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDIxOS82Nzc0">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#多线程"><span class="toc-text">多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lock"><span class="toc-text">lock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocal"><span class="toc-text">ThreadLocal</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5604698597">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Createwj">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 新城 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">来访次数: <span id="busuanzi_value_site_pv"></span> 次</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://createwj.github.io/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://createwj.github.io/VUE2.0-sell/xincheng.jpeg">
+</body>
+
+</html>

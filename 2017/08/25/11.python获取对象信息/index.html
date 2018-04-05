@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="描述">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="新城" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        python获取对象信息｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://createwj.github.io/index.html/2017/08/25/11.python获取对象信息/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/WechatIMG10.jpeg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    新城
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">分类</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/about/">关于我</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>python获取对象信息</h1>
+                    
+                    <span class="meta">
+                         作者 新城
+                        <span>
+                          日期 2017-08-25
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#python"
+                           title="python">python</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            python获取对象信息
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p><div style="text-align:center"><br>    <img src="https://createwj.github.io/img/timg.jpg" alt="" title="哇"><br></div></p>
+<h3 id="python-获取对象信息"><a href="#python-获取对象信息" class="headerlink" title="python 获取对象信息"></a>python 获取对象信息</h3><p>获取对象类型 判断对象是什么类型,并且知道对象有哪些方法<br><a id="more"></a></p>
+<h4 id="判断对象是什么类型-使用type"><a href="#判断对象是什么类型-使用type" class="headerlink" title="判断对象是什么类型 使用type()"></a>判断对象是什么类型 使用type()</h4><h3 id="基本类型都可以用type-判断"><a href="#基本类型都可以用type-判断" class="headerlink" title="基本类型都可以用type()判断"></a>基本类型都可以用type()判断</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type(123)  #&lt;class int&gt;</span><br><span class="line">type(&apos;str&apos;)  #&lt;class str&gt;</span><br><span class="line">type(None)  #&lt;type(None) &apos;NoneType&apos;&gt;</span><br></pre></td></tr></table></figure>
+<p>如果一个变量指向函数或者类，也可以使用type()判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(abs)  #&lt;class &apos;builtin_function_or_method&apos;&gt;</span><br><span class="line">type(a)     #&lt;class &apos;__main__.Animal&apos;&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>可以使用if判断两个类型是否相等</strong><br>判断基本类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = &apos;str&apos;</span><br><span class="line">type(a) == str   #输出 True</span><br></pre></td></tr></table></figure></p>
+<p>判断一个对象是否是一个函数？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import types</span><br><span class="line">def fn():</span><br><span class="line">    pass</span><br><span class="line">type(fn) == types.FunctionType      # True  判断函数</span><br><span class="line">type(abs)==types.BuiltinFunctionType     # True  函数</span><br><span class="line">type(lambda x: x)==types.LambdaType     # True  判断匿名函数</span><br><span class="line">type((x for x in range(10)))==types.GeneratorType   # True  函数</span><br></pre></td></tr></table></figure></p>
+<h4 id="使用isinstance"><a href="#使用isinstance" class="headerlink" title="使用isinstance()"></a>使用isinstance()</h4><p>我们要判断class的类型，可以使用isinstance()函数</p>
+<blockquote>
+<p>object -&gt; Animal -&gt; Dog -&gt; Husky (继承关系)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = Animal()</span><br><span class="line">d = Dog()</span><br><span class="line">h = Husky()</span><br></pre></td></tr></table></figure>
+<p>判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isinstance(h,Husky)     #True</span><br><span class="line">isinstance(h, Animal)   #True    因为h是从Animal继承下来的</span><br></pre></td></tr></table></figure></p>
+<p><strong>能用type()判断的基本类型也可以用isinstance()</strong></p>
+<h3 id="获得一个对象的所有属性和方法"><a href="#获得一个对象的所有属性和方法" class="headerlink" title="获得一个对象的所有属性和方法"></a>获得一个对象的所有属性和方法</h3><h4 id="dir"><a href="#dir" class="headerlink" title="dir()"></a>dir()</h4><p>要获得一个对象的所有属性和方法，它返回一个包含字符串的list<br>eg:要获得str对象的所有属性和方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir(&apos;ABC&apos;)  #输出[&apos;__add__&apos;, &apos;__class__&apos;, &apos;__contains__&apos;, &apos;__delattr__&apos;, &apos;__dir__&apos;, &apos;__doc__&apos;, &apos;__eq__&apos;, &apos;__format__&apos;, &apos;__ge__&apos;, &apos;__getattribute__&apos;, &apos;__getitem__&apos;, &apos;__getnewargs__&apos;, &apos;__gt__&apos;, &apos;__hash__&apos;, &apos;__init__&apos;, &apos;__iter__&apos;, &apos;__le__&apos;, &apos;__len__&apos;, &apos;__lt__&apos;, &apos;__mod__&apos;, &apos;__mul__&apos;, &apos;__ne__&apos;, &apos;__new__&apos;, &apos;__reduce__&apos;, &apos;__reduce_ex__&apos;, &apos;__repr__&apos;, &apos;__rmod__&apos;, &apos;__rmul__&apos;, &apos;__setattr__&apos;, &apos;__sizeof__&apos;, &apos;__str__&apos;, &apos;__subclasshook__&apos;, &apos;capitalize&apos;, &apos;casefold&apos;, &apos;center&apos;, &apos;count&apos;, &apos;encode&apos;, &apos;endswith&apos;, &apos;expandtabs&apos;, &apos;find&apos;, &apos;format&apos;, &apos;format_map&apos;, &apos;index&apos;, &apos;isalnum&apos;, &apos;isalpha&apos;, &apos;isdecimal&apos;, &apos;isdigit&apos;, &apos;isidentifier&apos;, &apos;islower&apos;, &apos;isnumeric&apos;, &apos;isprintable&apos;, &apos;isspace&apos;, &apos;istitle&apos;, &apos;isupper&apos;, &apos;join&apos;, &apos;ljust&apos;, &apos;lower&apos;, &apos;lstrip&apos;, &apos;maketrans&apos;, &apos;partition&apos;, &apos;replace&apos;, &apos;rfind&apos;, &apos;rindex&apos;, &apos;rjust&apos;, &apos;rpartition&apos;, &apos;rsplit&apos;, &apos;rstrip&apos;, &apos;split&apos;, &apos;splitlines&apos;, &apos;startswith&apos;, &apos;strip&apos;, &apos;swapcase&apos;, &apos;title&apos;, &apos;translate&apos;, &apos;upper&apos;, &apos;zfill&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>仅仅把属性和方法列出来是不够的，配合getattr()、setattr()以及hasattr()，我们可以<strong>直接操作一个对象的状态</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class MyObject(object):</span><br><span class="line">     def __init__(self):</span><br><span class="line">         self.x = 9</span><br><span class="line">     def power(self):</span><br><span class="line">         return self.x * self.x</span><br><span class="line">obj = MyObject()</span><br><span class="line"></span><br><span class="line">hasattr(obj, &apos;x&apos;)   #判断是否有x属性  True</span><br><span class="line"></span><br><span class="line">hasattr(obj, &apos;y&apos;)   #判断是否有y属性  False</span><br><span class="line">setattr(obj, &apos;y&apos;, 19) #设置一个y属性  赋值为19</span><br><span class="line">hasattr(obj, &apos;y&apos;)   #判断是否有y属性</span><br><span class="line">getattr(obj, &apos;y&apos;)   #获取属性y的值</span><br><span class="line">getattr(obj, &apos;z&apos;)   #AttributeError: &apos;MyObject&apos; object has no attribute &apos;z&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>如果试图获取不存在的属性，会抛出AttributeError的错误</strong><br>可以传入一个default参数，如果属性不存在，就返回默认值：</p>
+<blockquote>
+<p>getattr(obj, ‘z’, 404)</p>
+</blockquote>
+<p><strong>也可以将对象的方法单独赋值给某个变量</strong></p>
+<blockquote>
+<p>fn = getattr(obj, ‘power’) # 获取属性’power’并赋值到变量fn</p>
+</blockquote>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>通过内置的一系列函数，我们可以对任意一个Python对象进行剖析，拿到其内部的数据。要注意的是，只有在不知道对象信息的时候，我们才会去获取对象信息</p>
+<h3 id="实例属性和类属性-https-www-liaoxuefeng-com-wiki-0014316089557264a6b348958f449949df42a6d3a2e542c000-0014319117128404c7dd0cf0e3c4d88acc8fe4d2c163625000"><a href="#实例属性和类属性-https-www-liaoxuefeng-com-wiki-0014316089557264a6b348958f449949df42a6d3a2e542c000-0014319117128404c7dd0cf0e3c4d88acc8fe4d2c163625000" class="headerlink" title="(实例属性和类属性)[https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014319117128404c7dd0cf0e3c4d88acc8fe4d2c163625000]"></a>(实例属性和类属性)[<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014319117128404c7dd0cf0e3c4d88acc8fe4d2c163625000]" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014319117128404c7dd0cf0e3c4d88acc8fe4d2c163625000]</a></h3><p>给实例绑定属性的方法是通过实例变量，或者通过self变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">    def __init__(self, name):</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">s = Student(&apos;Bob&apos;)</span><br><span class="line">s.score = 90        #理解 只有s这个实例才存在 score这个属性   Student这个类并不受影响</span><br><span class="line"></span><br><span class="line">s.name              #因为实例并没有name属性，所以会继续查找class的name属性</span><br><span class="line"></span><br><span class="line">Student.name        # 打印类的name属性</span><br><span class="line">#理解</span><br><span class="line">s.name = &apos;Michael&apos;  # 给实例绑定name属性   由于实例属性优先级比类属性高，因此，它会屏蔽掉类的name属性</span><br><span class="line"></span><br><span class="line">Student.name        # 但是类属性并未消失，用Student.name仍然可以访问</span><br><span class="line"></span><br><span class="line">del s.name       # 如果删除实例的name属性</span><br><span class="line"></span><br><span class="line">s.name             # 再次调用s.name，由于实例的name属性没有找到，类的name属性就显示出来了</span><br></pre></td></tr></table></figure></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/08/25/12.python面向对象高级编程/" data-toggle="tooltip" data-placement="top"
+                           title="python面向对象高级编程">&larr; 上一篇</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/08/24/10.python继承多态/" data-toggle="tooltip" data-placement="top"
+                           title="python继承多态">下一篇 &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDIxOS82Nzc0">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#python-获取对象信息"><span class="toc-text">python 获取对象信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#判断对象是什么类型-使用type"><span class="toc-text">判断对象是什么类型 使用type()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本类型都可以用type-判断"><span class="toc-text">基本类型都可以用type()判断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用isinstance"><span class="toc-text">使用isinstance()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获得一个对象的所有属性和方法"><span class="toc-text">获得一个对象的所有属性和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dir"><span class="toc-text">dir()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例属性和类属性-https-www-liaoxuefeng-com-wiki-0014316089557264a6b348958f449949df42a6d3a2e542c000-0014319117128404c7dd0cf0e3c4d88acc8fe4d2c163625000"><span class="toc-text">(实例属性和类属性)[https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014319117128404c7dd0cf0e3c4d88acc8fe4d2c163625000]</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5604698597">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Createwj">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 新城 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">来访次数: <span id="busuanzi_value_site_pv"></span> 次</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://createwj.github.io/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://createwj.github.io/VUE2.0-sell/xincheng.jpeg">
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="描述">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="新城" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        将HTML生成图片｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://createwj.github.io/index.html/2017/12/23/95.pic/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/WechatIMG10.jpeg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    新城
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">分类</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/about/">关于我</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>将HTML生成图片</h1>
+                    
+                    <span class="meta">
+                         作者 新城
+                        <span>
+                          日期 2017-12-23
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#web"
+                           title="web">web</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            将HTML生成图片
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p><img src="https://user-gold-cdn.xitu.io/2017/12/22/1607db68713a6ba9?w=545&amp;h=397&amp;f=png&amp;s=180193" alt="生成效果图片"></p>
+<p>—— Liter<br>&lt;–!more–&gt;</p>
+<h5 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h5><p>1.前端添加管理员信息包括（姓名，年龄，头像等）<br>2.将管理员信息显示在具体背景图片上，将其生成图片的形式上传后台服务器（<strong>base64格式</strong>或者<strong>文件的格式</strong>）</p>
+<h5 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h5><p>1.将管理员信息使用定位将其设置在指定背景图片上。<br>2.使用html2canvas将指定div生成canvas<br>3.将生成的canvas进行base64编码 或者生成文件 上传（建议base64上传）</p>
+<h5 id="附加功能"><a href="#附加功能" class="headerlink" title="附加功能"></a>附加功能</h5><p>本地上传图片 进行base64编码之后回显<br>生成canvas之后支持本地下载</p>
+<h5 id="压缩图片"><a href="#压缩图片" class="headerlink" title="压缩图片"></a>压缩图片</h5><p>使用canvas API<br><strong>quality 值越小，所绘制出的图像越模糊 对应图片越小</strong> 根据需求设置相对应的数值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var base64 = canvas.toDataURL(&apos;image/jpeg&apos;, quality );</span><br></pre></td></tr></table></figure></p>
+<p>点击访问<a href="http://116.62.168.126/pages/upLoadFile/index.htm" target="_blank" rel="noopener">Demo地址</a></p>
+<p>下面笔记简单介绍html2canvas的使用<br> <a href="http://html2canvas.hertzen.com/" target="_blank" rel="noopener">html2canvas官网</a><br><a href="https://github.com/niklasvh/html2canvas" target="_blank" rel="noopener">github</a></p>
+<h3 id="1-使用方法"><a href="#1-使用方法" class="headerlink" title="1. 使用方法"></a>1. 使用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">html2canvas(document.getElementById(&apos;diploma&apos;), &#123;</span><br><span class="line">       onrendered: function(canvas) &#123;</span><br><span class="line">           $(&apos;#view&apos;).html(canvas);  // 容器</span><br><span class="line">       &#125;,</span><br><span class="line">       width: 547,</span><br><span class="line">       height: 398</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>diploma</strong> html容器<br><strong>view</strong>放置将要生成图片的容器，设置固定宽高（547 * 398）</p>
+<p><strong>注意：</strong>  在生成图片的时候<strong>diploma容器不能被遮挡, 否则不能生成完整的canvas</strong></p>
+<h3 id="2-基本常用API"><a href="#2-基本常用API" class="headerlink" title="2. 基本常用API"></a>2. 基本常用API</h3><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">默认值</th>
+<th style="text-align:right">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">#fff</td>
+<td style="text-align:right">如果使用的是png背景图片这里可是使用如果没有 默认透明</td>
+</tr>
+<tr>
+<td>height</td>
+<td style="text-align:center">number</td>
+<td style="text-align:right">null</td>
+<td style="text-align:right">需要手动设置</td>
+</tr>
+<tr>
+<td>width</td>
+<td style="text-align:center">number</td>
+<td style="text-align:right">null</td>
+<td style="text-align:right">需要手动设置</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td style="text-align:center">number</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">图片加载延时  默认为0</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td style="text-align:center">number</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">图片加载延时  默认为0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>其他API参看<a href="http://html2canvas.hertzen.com/configuration" target="_blank" rel="noopener">官网手册</a></strong></p>
+<h3 id="3-本地上传头base64编码（回显）"><a href="#3-本地上传头base64编码（回显）" class="headerlink" title="3. 本地上传头base64编码（回显）"></a>3. 本地上传头base64编码（回显）</h3><p>FileReader接口提供了读取文件的方法和包含读取结果的事件模型<br><strong>主要是将上传的图片文件转换成base64</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> var r = new FileReader()</span><br><span class="line">   r.readAsDataURL(file)</span><br><span class="line">   r.onload = function(e)&#123;</span><br><span class="line">       $(&apos;.avatar img&apos;).attr(&apos;src&apos;, e.target.result)  // 将img  src设置base64</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>附上<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" target="_blank" rel="noopener">FileReader</a>对象详细文档</strong></p>
+<h3 id="4-canvas转base64上传"><a href="#4-canvas转base64上传" class="headerlink" title="4.canvas转base64上传"></a>4.canvas转base64上传</h3><p>将html2canvas生成的canvas转换成base64进行上传<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.querySelector(&quot;#view canvas&quot;)</span><br><span class="line">    var dataURL = canvas.toDataURL(&quot;image/png&quot;);</span><br><span class="line">    dataURL = dataURL.split(&quot;,&quot;)[1];</span><br><span class="line">    return dataURL</span><br></pre></td></tr></table></figure></p>
+<p><strong>附上<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL" target="_blank" rel="noopener">canvas API</a>文档</strong></p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>转换base64的时候需要一定时间可以使用promise函数异步去执行,在没有base64产生的时候执行会报错</p>
+<p>组后点击下载 使用js将canvas转换成文件进行下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function Download()&#123;</span><br><span class="line">    //cavas 保存图片到本地  js 实现</span><br><span class="line">    //------------------------------------------------------------------------</span><br><span class="line">    //1.确定图片的类型  获取到的图片格式 data:image/Png;base64,......</span><br><span class="line">    var type =&apos;png&apos;;//你想要什么图片格式 就选什么吧</span><br><span class="line">    var d=document.querySelector(&apos;#view canvas&apos;);</span><br><span class="line">    var imgdata=d.toDataURL(type);</span><br><span class="line">    //2.0 将mime-type改为image/octet-stream,强制让浏览器下载</span><br><span class="line">    var fixtype=function(type)&#123;</span><br><span class="line">        type=type.toLocaleLowerCase().replace(/jpg/i,&apos;jpeg&apos;);</span><br><span class="line">        var r=type.match(/png|jpeg|bmp|gif/)[0];</span><br><span class="line">        return &apos;image/&apos;+r;</span><br><span class="line">    &#125;;</span><br><span class="line">    imgdata=imgdata.replace(fixtype(type),&apos;image/octet-stream&apos;);</span><br><span class="line">    //3.0 将图片保存到本地</span><br><span class="line">    var savaFile=function(data,filename)</span><br><span class="line">    &#123;</span><br><span class="line">        var save_link=document.createElementNS(&apos;http://www.w3.org/1999/xhtml&apos;, &apos;a&apos;);</span><br><span class="line">        save_link.href=data;</span><br><span class="line">        save_link.download=filename;</span><br><span class="line">        var event=document.createEvent(&apos;MouseEvents&apos;);</span><br><span class="line">        event.initMouseEvent(&apos;click&apos;,true,false,window,0,0,0,0,0,false,false,false,false,0,null);</span><br><span class="line">        save_link.dispatchEvent(event);</span><br><span class="line">    &#125;;</span><br><span class="line">    var filename=&apos;&apos;+new Date().getDate()+&apos;.&apos;+type;</span><br><span class="line">    //直接用当前几号做的图片名字</span><br><span class="line">    savaFile(imgdata,filename);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h6 id="只是个Demo-仅供参考-代码较乱-有待提高"><a href="#只是个Demo-仅供参考-代码较乱-有待提高" class="headerlink" title="只是个Demo 仅供参考 代码较乱 有待提高"></a>只是个Demo 仅供参考 代码较乱 有待提高</h6>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/12/23/94.web/" data-toggle="tooltip" data-placement="top"
+                           title="大屏展示">&larr; 上一篇</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/11/23/93.echar的使用/" data-toggle="tooltip" data-placement="top"
+                           title="linux">下一篇 &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDIxOS82Nzc0">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#项目需求"><span class="toc-text">项目需求</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实现思路"><span class="toc-text">实现思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#附加功能"><span class="toc-text">附加功能</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#压缩图片"><span class="toc-text">压缩图片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-使用方法"><span class="toc-text">1. 使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-基本常用API"><span class="toc-text">2. 基本常用API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-本地上传头base64编码（回显）"><span class="toc-text">3. 本地上传头base64编码（回显）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-canvas转base64上传"><span class="toc-text">4.canvas转base64上传</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#只是个Demo-仅供参考-代码较乱-有待提高"><span class="toc-text">只是个Demo 仅供参考 代码较乱 有待提高</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5604698597">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Createwj">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 新城 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">来访次数: <span id="busuanzi_value_site_pv"></span> 次</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://createwj.github.io/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://createwj.github.io/VUE2.0-sell/xincheng.jpeg">
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="描述">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="新城" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        mate标签详解（转）｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://createwj.github.io/index.html/2018/01/15/96.mate/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/WechatIMG10.jpeg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    新城
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">分类</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/about/">关于我</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>mate标签详解（转）</h1>
+                    
+                    <span class="meta">
+                         作者 新城
+                        <span>
+                          日期 2018-01-15
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#web"
+                           title="web">web</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            mate标签详解（转）
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。</p>
+<blockquote>
+<p>meat标签的http-equiv属性语法格式是：＜meta http-equiv=”参数” content=”参数变量值”＞ ；其中http-equiv属性主要有以下几种参数：</p>
+</blockquote>
+<h3 id="1、Expires-期限"><a href="#1、Expires-期限" class="headerlink" title="1、Expires(期限)"></a>1、Expires(期限)</h3><p>说明：<strong>可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</strong></p>
+<p>用法：<br>Html代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">＜meta http-equiv=&quot;expires&quot; content=&quot;Wed, 20 Jun 2007 22:33:00 GMT&quot;＞</span><br><span class="line">//设置每次访问都需要请求最新html代码</span><br><span class="line"> &lt;meta http-equiv=&quot;Expires&quot; content=&quot;0&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：</strong> 必须使用GMT的时间格式。</p>
+<h3 id="2、Pragma-cache模式"><a href="#2、Pragma-cache模式" class="headerlink" title="2、Pragma(cache模式)"></a>2、Pragma(cache模式)</h3><p>说明： <strong>是用于设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出</strong></p>
+<p>用法：<br>Html代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、Refresh-刷新"><a href="#3、Refresh-刷新" class="headerlink" title="3、Refresh(刷新)"></a>3、Refresh(刷新)</h3><p>说明：<strong>自动刷新并指向新页面。</strong></p>
+<p>用法：<br>Html代码</p>
+<figure class="highlight plain"><figcaption><span>http-equiv</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**注意：** 其中的2是指停留2秒钟后自动刷新到URL网址。</span><br><span class="line"></span><br><span class="line">### 4、Set-Cookie(cookie设定)</span><br><span class="line">说明：**如果网页过期，那么存盘的cookie将被删除。**</span><br><span class="line"></span><br><span class="line">用法：</span><br><span class="line">Html代码</span><br><span class="line">```＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx;expires=Wednesday, 20-Jun-2007 22:33:00 GMT； path=/&quot;＞</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> 必须使用GMT的时间格式。</p>
+<h3 id="5、Window-target-显示窗口的设定"><a href="#5、Window-target-显示窗口的设定" class="headerlink" title="5、Window-target(显示窗口的设定)"></a>5、Window-target(显示窗口的设定)</h3><p>说明：<strong>强制页面在当前窗口以独立页面显示。</strong></p>
+<p>用法：<br>Html代码<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</span><br><span class="line">// _blank、_top、_self、_parent</span><br></pre></td></tr></table></figure></p>
+<p>-blank 在新窗口显示<br>-top 当前整个窗口显示<br>-parent 父容器显示，比如框架嵌套<br>-self 当前容器显示，比如框架嵌套<br>注意： <strong>用来防止别人在框架里调用自己的页面</strong></p>
+<h3 id="6、content-Type-显示字符集的设定"><a href="#6、content-Type-显示字符集的设定" class="headerlink" title="6、content-Type(显示字符集的设定)"></a>6、content-Type(显示字符集的设定)</h3><p>说明：<strong>设定页面使用的字符集。 </strong><br>用法：<br>Html代码</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞ // ===</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="8、Page-Enter、Page-Exit"><a href="#8、Page-Enter、Page-Exit" class="headerlink" title="8、Page_Enter、Page_Exit"></a>8、Page_Enter、Page_Exit</h3><p><strong>设定进入页面时的特殊效果</strong><br>Html代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Page-Enter&quot;    contect=&quot;revealTrans(duration=1.0,transtion=    12)&quot;&gt;</span><br><span class="line"></span><br><span class="line">设定离开页面时的特殊效果</span><br><span class="line">Html代码  收藏代码</span><br><span class="line">&lt;meta http-equiv=&quot;Page-Exit&quot;    contect=&quot;revealTrans(duration=1.0,transtion=12)&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Duration的值为网页动态过渡的时间，单位为秒。<br>Transition是过渡方式，它的值为0到23，分别对应24种过渡方式。如下：<br>| 数值| 效果           |数值| 效果  |<br>| ————- |:————-:| —–:|—–:|<br>|0  |  盒状收缩  |  1  |  盒状放射  |<br>|2 |   圆形收缩|    3   | 圆形放射 |<br>|4  |  由下往上 |   5  |  由上往下  |<br>|6|    从左至右   | 7    |从右至左  |<br>|8  |  垂直百叶窗   | 9   | 水平百叶窗  |<br>|10   | 水平格状百叶窗|    11|垂直格状百叶窗  |<br>|12  |  随意溶解|    13|从左右两端向中间展开  |<br>|14|从中间向左右两端展开  |  15|从上下两端向中间展开  |<br>|16|从中间向上下两端展开 |   17  |  从右上角向左下角展开  |<br>|18  |  从右下角向左上角展开   | 19 |   从左上角向右下角展开  |<br>|20 |   从左下角向右上角展开  |  21    |水平线状展开  |<br>|22 |   垂直线状展开 |   23 |   随机产生一种过渡方式  |</p>
+<h3 id="9、清除缓存（再访问这个网站要重新下载！）"><a href="#9、清除缓存（再访问这个网站要重新下载！）" class="headerlink" title="9、清除缓存（再访问这个网站要重新下载！）"></a>9、清除缓存（再访问这个网站要重新下载！）</h3><p>Html代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="10、设定网页的到期时间"><a href="#10、设定网页的到期时间" class="headerlink" title="10、设定网页的到期时间"></a>10、设定网页的到期时间</h3><p>Html代码</p>
+<figure class="highlight plain"><figcaption><span>http-equiv</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 11、关键字,给搜索引擎用的</span><br><span class="line">Html代码</span><br></pre></td></tr></table></figure>
+<p><meta http-equiv="keywords" content="keyword1,keyword2,keyword3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 12.页面描述</span><br><span class="line">Html代码</span><br></pre></td></tr></table></figure></p>
+<p><meta http-equiv="description" content="This is my page"><br><code>`</code></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/03/26/03.reac/" data-toggle="tooltip" data-placement="top"
+                           title="react">&larr; 上一篇</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/12/23/94.web/" data-toggle="tooltip" data-placement="top"
+                           title="大屏展示">下一篇 &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDIxOS82Nzc0">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、Expires-期限"><span class="toc-text">1、Expires(期限)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、Pragma-cache模式"><span class="toc-text">2、Pragma(cache模式)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Refresh-刷新"><span class="toc-text">3、Refresh(刷新)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、Window-target-显示窗口的设定"><span class="toc-text">5、Window-target(显示窗口的设定)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、content-Type-显示字符集的设定"><span class="toc-text">6、content-Type(显示字符集的设定)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、Page-Enter、Page-Exit"><span class="toc-text">8、Page_Enter、Page_Exit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、清除缓存（再访问这个网站要重新下载！）"><span class="toc-text">9、清除缓存（再访问这个网站要重新下载！）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、设定网页的到期时间"><span class="toc-text">10、设定网页的到期时间</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5604698597">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Createwj">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 新城 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">来访次数: <span id="busuanzi_value_site_pv"></span> 次</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://createwj.github.io/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://createwj.github.io/VUE2.0-sell/xincheng.jpeg">
+</body>
+
+</html>

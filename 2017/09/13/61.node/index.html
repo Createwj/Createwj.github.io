@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="描述">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="新城" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        node｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://createwj.github.io/index.html/2017/09/13/61.node/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/WechatIMG10.jpeg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    新城
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">分类</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/about/">关于我</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>node</h1>
+                    
+                    <span class="meta">
+                         作者 新城
+                        <span>
+                          日期 2017-09-13
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#node"
+                           title="node">node</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            node
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>百度安装node</p>
+<p>新建项目</p>
+<p>根目录新建server.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;); //引入http模块</span><br><span class="line">http.createServer(function (request, response) &#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;: &apos;text/plain&apos;&#125;);// 发送 HTTP 头部 // HTTP 状态值: 200 : OK// 内容类型: text/plain</span><br><span class="line">    response.end(&apos;Hello World\n&apos;);    // 发送响应数据 &quot;Hello World&quot;</span><br><span class="line">&#125;).listen(8888);</span><br><span class="line"></span><br><span class="line">console.log(&apos;Server running at http://127.0.0.1:8888/&apos;);  // 终端打印如下信息</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>当前目录打开命令行 运行node server.js</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">F:\Createwj.github.io\source\node\1&gt;node server.js</span><br><span class="line">Server running at http://127.0.0.1:8888/</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器打开 <a href="http://127.0.0.1:8888/" target="_blank" rel="noopener">http://127.0.0.1:8888/</a></p>
+<h3 id="express"><a href="#express" class="headerlink" title="express"></a>express</h3><p>安装express框架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure></p>
+<h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><p>阻塞代码例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;); //文件读写</span><br><span class="line">var data = fs.readFileSync(&apos;input.txt&apos;);    //读取文件名称</span><br><span class="line">console.log(data.toString());       //转化为字符串</span><br><span class="line">console.log(&quot;Program Ended&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>非阻塞代码例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">fs.readFile(&apos;input.txt&apos;, function (err, data) &#123;</span><br><span class="line">    if (err) return console.error(err);</span><br><span class="line">    console.log(data.toString());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;Program Ended&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>非阻塞的时候先输出Program Ended 在输出文件读取内容 异步 适合高并发’</p>
+<h3 id="Node-js事件循环参考"><a href="#Node-js事件循环参考" class="headerlink" title="Node.js事件循环参考"></a>Node.js事件循环<a href="http://www.jianshu.com/p/d070e11ffa4d" target="_blank" rel="noopener">参考</a></h3><p>Node JS是单线程应用程序，但它通过事件和回调概念，支持并发。<br>由于Node JS每一个API是异步的，作为一个单独的线程，它使用异步函数调用，以保持并发性。</p>
+<p><strong>在事件驱动的应用中，通常主循环监听事件，然后触发回调函数时被检测到这些事件之一。</strong></p>
+<div style="width:100%;margin:4.3%"><br>    <img src="https://createwj.github.io/img/node/1.jpg" style="width:100%;"><br></div>
+
+<h3 id="Node-js事件发射器"><a href="#Node-js事件发射器" class="headerlink" title="Node.js事件发射器"></a>Node.js事件发射器</h3><p><strong>EventEmitter 类</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Import events module</span><br><span class="line">var events = require(&apos;events&apos;);</span><br><span class="line">// Create an eventEmitter object</span><br><span class="line">var eventEmitter = new events.EventEmitter();</span><br></pre></td></tr></table></figure></p>
+<p>EventEmitter实例对任何错误，它会发出一个“error”事件。当新的侦听器被添加，“newListener’事件被触发，当一个侦听器被删除，’removeListener”事件被触发。</p>
+<p>EventEmitter提供多种性能如在发射。On属性用于绑定事件函数，发射用于触发一个事件。</p>
+<h3 id="Node-js缓冲器"><a href="#Node-js缓冲器" class="headerlink" title="Node.js缓冲器"></a>Node.js缓冲器</h3><p>纯JavaScript是Unicode友好的，但对二进制数据不是很好。当与TCP流或文件系统打交道时，有必要处理字节流。 Node提供缓冲器类，它提供实例来存储原始数据相似的一个整数数组，但对应于在V8堆外的原始存储器的分配。</p>
+<p>Buffer类是一个全局类，可以在应用程序，导入缓冲模块进行访问。<br><strong>创建缓冲区</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var buf = new Buffer(10);   //创建10个字节的汉缓冲的语法：</span><br><span class="line"></span><br><span class="line">var buf = new Buffer([10, 20, 30, 40, 50]); //给定数组创建一个缓冲区的语法：</span><br><span class="line"></span><br><span class="line">var buf = new Buffer(&quot;Simply Easy Learning&quot;, &quot;utf-8&quot;); //给定的字符串和可选的编码类型创建缓冲区的语法：</span><br></pre></td></tr></table></figure></p>
+<p><strong>写到缓冲器</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buf.write(string[, offset][, length][, encoding])  //写入到一个节点缓冲器的方法的语法：</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>string - 这是要被写入的数据串缓冲区。</p>
+</li>
+<li><p>offset - 这是缓冲区开始的索引。默认值为0。</p>
+</li>
+<li><p>length - 这是要写入的字节的数目。默认是 buffer.length</p>
+</li>
+<li><p>encoding - 编码使用。 “UTF8”是默认的编码</p>
+</li>
+</ul>
+<p><strong>从缓冲器读取</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buf.toString([encoding][, start][, end])</span><br></pre></td></tr></table></figure></p>
+<p> -encoding - 编码使用。 “UTF8”是默认的编码</p>
+<ul>
+<li>start - 开始读取的索引，默认为0。</li>
+<li>end - 最终读数结束的索引，默认值是整个缓冲区。</li>
+</ul>
+<p><strong>转换缓冲到JSON</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buf.toJSON()</span><br></pre></td></tr></table></figure>
+<p>执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var buf = new Buffer(&apos;Simply Easy Learning&apos;);</span><br><span class="line">var json = buf.toJSON(buf);</span><br><span class="line"></span><br><span class="line">console.log(json);</span><br></pre></td></tr></table></figure></p>
+<p>输出<br>[ 83, 105, 109, 112, 108, 121, 32, 69, 97, 115, 121, 32, 76, 101, 97, 114, 110, 105, 110, 103 ]</p>
+<p><strong>接续缓冲器</strong><br>以下是连接Node缓存到单个节点缓存方法的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Buffer.concat(list[, totalLength])</span><br></pre></td></tr></table></figure></p>
+<p>参数</p>
+<ul>
+<li><p>list -要连接缓冲区的数组对象列表</p>
+</li>
+<li><p>totalLength - 这是缓冲器连接在一起时的总长度</p>
+<p>示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var buffer1 = new Buffer(&apos;YiiBai &apos;);</span><br><span class="line">var buffer2 = new Buffer(&apos;Simply Easy Learning&apos;);</span><br><span class="line">var buffer3 = Buffer.concat([buffer1,buffer2]);</span><br><span class="line">console.log(&quot;buffer3 content: &quot; + buffer3.toString());</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输出<br>buffer3 content: YiiBai Simply Easy Learning</p>
+<p><strong>比较缓冲器</strong></p>
+<p>下面是比较两个Node缓冲器的方法的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buf.compare(otherBuffer);</span><br></pre></td></tr></table></figure></p>
+<p>otherBuffer - 这是将与被比较的其它缓冲 buf</p>
+<p>示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var buffer1 = new Buffer(&apos;ABC&apos;);</span><br><span class="line">var buffer2 = new Buffer(&apos;ABCD&apos;);</span><br><span class="line">var result = buffer1.compare(buffer2);</span><br><span class="line"></span><br><span class="line">if(result &lt; 0) &#123;</span><br><span class="line">   console.log(buffer1 +&quot; comes before &quot; + buffer2);</span><br><span class="line">&#125;else if(result == 0)&#123;</span><br><span class="line">   console.log(buffer1 +&quot; is same as &quot; + buffer2);</span><br><span class="line">&#125;else &#123;</span><br><span class="line">   console.log(buffer1 +&quot; comes after &quot; + buffer2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出 ABC comes before ABCD</p>
+<p><strong>复制缓存区</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buf.copy(targetBuffer[, targetStart][, sourceStart][, sourceEnd])</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>targetBuffer - 缓冲区对象的缓冲区将被复制。</li>
+<li>targetStart - 数量，可选，默认：0</li>
+<li>sourceStart - 数量，可选，默认：0</li>
+<li>sourceEnd - 数量，可选，默认：buffer.length</li>
+</ul>
+<p><strong>返回值</strong><br>没有返回值。拷贝数据从该缓冲器的一区域中，即使在目标内存区域与源重叠的目标缓冲器的区域。如果不确定targetStart，那么sourceStart参数默认为0，sourceEnd默认为buffer.length<br>示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var buffer1 = new Buffer(&apos;ABC&apos;);</span><br><span class="line">//copy a buffer</span><br><span class="line">var buffer2 = new Buffer(3);</span><br><span class="line">buffer1.copy(buffer2);</span><br><span class="line">console.log(&quot;buffer2 content: &quot; + buffer2.toString());</span><br></pre></td></tr></table></figure></p>
+<p>输出 buffer2 content: ABC</p>
+<p>缓存区长度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var buffer = new Buffer(&apos;YiiBai&apos;);</span><br><span class="line">//length of the buffer</span><br><span class="line">console.log(&quot;buffer length: &quot; + buffer.length);</span><br></pre></td></tr></table></figure></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/13/64.node区局对象/" data-toggle="tooltip" data-placement="top"
+                           title="node全局对象">&larr; 上一篇</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/13/60.qianduan/" data-toggle="tooltip" data-placement="top"
+                           title="前端路线(架构、性能)">下一篇 &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDIxOS82Nzc0">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#express"><span class="toc-text">express</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件读取"><span class="toc-text">文件读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js事件循环参考"><span class="toc-text">Node.js事件循环参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js事件发射器"><span class="toc-text">Node.js事件发射器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js缓冲器"><span class="toc-text">Node.js缓冲器</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5604698597">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Createwj">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 新城 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">来访次数: <span id="busuanzi_value_site_pv"></span> 次</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://createwj.github.io/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://createwj.github.io/VUE2.0-sell/xincheng.jpeg">
+</body>
+
+</html>
