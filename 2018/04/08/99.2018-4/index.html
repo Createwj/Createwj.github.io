@@ -203,7 +203,19 @@
 
 `优点：可以自己定义  比较自由`
 </code></pre><h5 id="px2rem的学习"><a href="#px2rem的学习" class="headerlink" title="px2rem的学习"></a>px2rem的学习</h5><p><code>px2rem不支持stylu语法 只能使用css语法</code> 使用起来比较繁琐  stylu</p>
-<p> 待定 寻找解决方案</p>
+<p>将1rem = 100px 设置成转换单位  在标准设计图纸上面就可以进行 按照缩小一百倍的尺寸进行还原设计图</p>
+<p>/**</p>
+<ul>
+<li>@param {Boolean} [normal = false] - 默认开启页面压缩以使页面高清;</li>
+<li>@param {Number} [baseFontSize = 100] - 基础fontSize, 默认100px;</li>
+<li><p>@param {Number} [fontscale = 1] - 有的业务希望能放大一定比例的字体;<br>*/<br>const win = window;<br>export default win.flex = (normal, baseFontSize, fontscale) =&gt; {<br>const _baseFontSize = baseFontSize || 100;<br>const _fontscale = fontscale || 1;</p>
+<p>const doc = win.document;<br>const ua = navigator.userAgent;<br>const matches = ua.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i);<br>const UCversion = ua.match(/U3\/((\d+|.){5,})/i);<br>const isUCHd = UCversion &amp;&amp; parseInt(UCversion[1].split(‘.’).join(‘’), 10) &gt;= 80;<br>const isIos = navigator.appVersion.match(/(iphone|ipad|ipod)/gi);<br>let dpr = win.devicePixelRatio || 1;<br>if (!isIos &amp;&amp; !(matches &amp;&amp; matches[1] &gt; 534) &amp;&amp; !isUCHd) {<br> // 如果非iOS, 非Android4.3以上, 非UC内核, 就不执行高清, dpr设为1;<br> dpr = 1;<br>}<br>const scale = normal ? 1 : 1 / dpr;</p>
+<p>let metaEl = doc.querySelector(‘meta[name=”viewport”]’);<br>if (!metaEl) {<br> metaEl = doc.createElement(‘meta’);<br> metaEl.setAttribute(‘name’, ‘viewport’);<br> doc.head.appendChild(metaEl);<br>}<br>metaEl.setAttribute(‘content’, <code>width=device-width,user-scalable=no,initial-scale=${scale},maximum-scale=${scale},minimum-scale=${scale}</code>);<br>doc.documentElement.style.fontSize = normal ? ‘50px’ : <code>${_baseFontSize / 2 * dpr * _fontscale}px</code>;<br>}</p>
+</li>
+</ul>
+<p>flex(false,100,1)   // 调用函数进行适配       1rem = 100px</p>
+<p>// 可以再厉添加    添加窗口监听事件 进行试试监听窗口的变化</p>
+<p>不需要手动添加适口 代码会自动添加到当前html页面头部<br><code>`</code></p>
 
                 <hr>
                 
