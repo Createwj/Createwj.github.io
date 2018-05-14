@@ -187,12 +187,14 @@
                 <h4 id="vue-cli使用心得"><a href="#vue-cli使用心得" class="headerlink" title="vue-cli使用心得"></a>vue-cli使用心得</h4><p>相比jquery有更高的性能<br>双向数据绑定极其方便快捷<br>使用vuex进行状态管理极其方便<br>使用axios发送请求<br>使用stylus进行编写css方便快捷</p>
 <p>打包编译的时候cdn配置 将打包的css js 自动添加前缀<br>transform的兼容在在移动比较差 使用的时候记得添加前缀 oppo手机坑<br>margin-top作用在父元素的 使用border-top 1px solid tranparemt 失效 建议使用 伪元素 befor content  你懂的<br>苹果手机不怎么支持fiexd定位 使用的时候小心坑</p>
 <p>资源过大的时候 使用路由懒加载</p>
-<h3 id="html2canvas-生成图片的时候图片不能跨域"><a href="#html2canvas-生成图片的时候图片不能跨域" class="headerlink" title="html2canvas 生成图片的时候图片不能跨域"></a>html2canvas 生成图片的时候图片不能跨域</h3><p>####坑：<br>    需要生成图片的div 不能display：none<br>    只能用定位的方式将div隐藏掉 否则不能生成图片 生成一张空白的 png</p>
+<h3 id="html2canvas-生成图片的时候图片不能跨域"><a href="#html2canvas-生成图片的时候图片不能跨域" class="headerlink" title="html2canvas 生成图片的时候图片不能跨域"></a><del>html2canvas 生成图片的时候图片不能跨域</del></h3><h3 id="html2canvas可以跨域"><a href="#html2canvas可以跨域" class="headerlink" title="html2canvas可以跨域"></a>html2canvas可以跨域</h3><p>使用img   crossorigin  属性canvas可以获取到 图片数据<br>image.setAttribute(‘crossorigin’, ‘anonymous’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">html2canvas(</span><br><span class="line">          document.querySelector(&quot;#capture&quot;),</span><br><span class="line">          &#123;                       // 允许跨域   允许污染画布</span><br><span class="line">            useCORS:true,         // image.setAttribute(&apos;crossorigin&apos;, &apos;anonymous&apos;)</span><br><span class="line">            allowTaint: true</span><br><span class="line">          &#125;</span><br><span class="line">        ).then(canvas=&gt;&#123;</span><br><span class="line">          document.body.appendChild(canvas)</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+<p>####坑：<br>    需要生成图片的div 不能display：none<br>    只能用定位的方式将div隐藏掉 否则不能生成图片 生成一张空白的 png</p>
 <p>####解决：<br>    1.<code>将图片进行编码 变成base64 然后使用编码过后的base64进行生成图片  将生成的资源放到cdn</code></p>
 <pre><code> 缺点：打包文件过大 用户体验不好
  优点：减小服务器压力
 
-2.`图片不需要跨域 直接将图片放到服务器上`
+~~2.`图片不需要跨域 直接将图片放到服务器上`~~
 
  缺点；服务器压力大
  优点：用户体验比前者好
@@ -265,7 +267,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue-cli使用心得"><span class="toc-text">vue-cli使用心得</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html2canvas-生成图片的时候图片不能跨域"><span class="toc-text">html2canvas 生成图片的时候图片不能跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#px2rem的学习"><span class="toc-text">px2rem的学习</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue-cli使用心得"><span class="toc-text">vue-cli使用心得</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html2canvas-生成图片的时候图片不能跨域"><span class="toc-text">html2canvas 生成图片的时候图片不能跨域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html2canvas可以跨域"><span class="toc-text">html2canvas可以跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#px2rem的学习"><span class="toc-text">px2rem的学习</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
