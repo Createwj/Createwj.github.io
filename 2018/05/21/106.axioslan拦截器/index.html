@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        node文件系统｜undefined
+        axios拦截器的简单使用｜undefined
         
     </title>
 
-    <link rel="canonical" href="https://createwj.github.io/index.html/2017/09/13/63.node文件操作/">
+    <link rel="canonical" href="https://createwj.github.io/index.html/2018/05/21/106.axioslan拦截器/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -153,18 +153,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>node文件系统</h1>
+                    <h1>axios拦截器的简单使用</h1>
                     
                     <span class="meta">
                          作者 新城
                         <span>
-                          日期 2017-09-13
+                          日期 2018-05-21
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#node文件系统"
-                           title="node文件系统">node文件系统</a>
+                        <a class="tag" href="/tags/#-axios拦截器"
+                           title="-axios拦截器">-axios拦截器</a>
                         
                     </div>
                 </div>
@@ -173,7 +173,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            node文件系统
+            axios拦截器的简单使用
         </span>
     </div>
 </header>
@@ -184,63 +184,19 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p><strong>同步和异步</strong> <a href="http://www.yiibai.com/nodejs/nodejs_file_system.html" target="_blank" rel="noopener">-</a><br>在fs模块的每一个方法都有同步和异步形式。异步方法需要最后一个参数为完成回调函数和回调函数的第一个参数是错误的。它优选使用异步方法来代替同步方法，前者从来不阻止程序的执行，作为第二使用。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">// 异步</span><br><span class="line">fs.readFile(&apos;input.txt&apos;, function (err, data) &#123;</span><br><span class="line">   if (err) &#123;</span><br><span class="line">       return console.error(err);</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(&quot;Asynchronous read: &quot; + data.toString());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 同步</span><br><span class="line">var data = fs.readFileSync(&apos;input.txt&apos;);</span><br><span class="line">console.log(&quot;Synchronous read: &quot; + data.toString());</span><br><span class="line"></span><br><span class="line">console.log(&quot;Program Ended&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>输出结果</p>
-<blockquote>
-<p>Synchronous read: Yiibai Point is giving self learning content<br> to teach the world in simple and easy way!!!!!</p>
-</blockquote>
-<p> Program Ended<br> Asynchronous read: Yiibai Point is giving self learning content<br> to teach the world in simple and easy way!!!!!</p>
-<p><strong>打开文件</strong><br>以下是在异步模式下打开文件的方法的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.open(path, flags,[ mode], callback)</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>path - 这是文件名，包括路径字符串。</li>
-<li>flags - 标志告知要打开的文件的行为。所有可能的值已经提及以下。</li>
-<li>mode - 这将设置文件模式(许可和粘性位)，但前提是在创建该文件。它默认为0666，读取和写入。</li>
-<li>callback - 这是回调函数得到两个参数(err, fd)。<br><strong>flags参数取值</strong><div style="width:80%;margin:1.3%"><br> <img src="https://createwj.github.io/img/node/2.jpg" style="width:100%;"><br></div>
-
-</li>
-</ul>
-<p><strong>获取文件信息</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.stat(path, callback)</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>path - 这是有文件名，包括路径字符串。</li>
-<li>callback - 这是回调函数得到两个参数(err, stats) ，其中统计数据是这是印在下面的例子中的fs.Stats类型的对象。<div style="width:80%;margin:1.3%"><br> <img src="https://createwj.github.io/img/node/3.jpg" style="width:100%;"><br></div>
-
-</li>
-</ul>
-<p><strong>同步 文件写入读取</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.writeFile(filename, data[, options], callback)</span><br><span class="line"></span><br><span class="line">fs.read(fd, buffer, offset, length, position, callback)</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>options - 第三个参数是一个对象，它将于{编码，模式，标志}。默认编码是UTF8，模式是八进制值0666和标志 ‘w’</li>
-</ul>
-<p><strong>关闭文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.close(fd, callback)</span><br></pre></td></tr></table></figure></p>
-<p><strong>删除文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.unlink(path, callback)</span><br></pre></td></tr></table></figure></p>
-<p><strong>创建目录</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.mkdir(path,[mode], callback)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>path - 这是包括路径的目录名。</li>
-<li>mode - 这是要设置的目录权限。默认为0777。</li>
-<li>callback - 这是回调函数</li>
-</ul>
-<p><strong>读取目录</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.readdir(path, callback)</span><br></pre></td></tr></table></figure></p>
-<p><strong>删除目录</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.rmdir(path, callback)</span><br></pre></td></tr></table></figure></p>
-<p>示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;Going to delete directory /tmp/test&quot;);</span><br><span class="line">fs.rmdir(&quot;/tmp/test&quot;,function(err)&#123;</span><br><span class="line">   if (err) &#123;</span><br><span class="line">       return console.error(err);</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(&quot;Going to read directory /tmp&quot;);</span><br><span class="line">   fs.readdir(&quot;/tmp/&quot;,function(err, files)&#123;</span><br><span class="line">      if (err) &#123;</span><br><span class="line">          return console.error(err);</span><br><span class="line">      &#125;</span><br><span class="line">      files.forEach( function (file)&#123;</span><br><span class="line">          console.log( file );</span><br><span class="line">      &#125;);</span><br><span class="line">   &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>输出</p>
-<blockquote>
-<p>{ Error: ENOENT: no such file or directory, rmdir ‘F:\tmp\test’<br>    at Error (native)<br>  errno: -4058,<br>  code: ‘ENOENT’,<br>  syscall: ‘rmdir’,<br>  path: ‘F:\tmp\test’ }</p>
-</blockquote>
-
+                <h4 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h4><p><a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios github地址</a><br>使用vue的时候常用的请求工具</p>
+<h4 id="axios拦截器是什么"><a href="#axios拦截器是什么" class="headerlink" title="axios拦截器是什么"></a>axios拦截器是什么</h4><p>http 是无状态协议 所以每次请求都需要使用唯一识别的token去判断是那个用户<br>axios拦截器就是用于封装 在每次请求过程都 将请求的数据进行拦截</p>
+<h4 id="axios拦截器能做什么"><a href="#axios拦截器能做什么" class="headerlink" title="axios拦截器能做什么"></a>axios拦截器能做什么</h4><p>把token添加到请求的数据中<br>无需每次发送请求都进行手动添加</p>
+<h4 id="axios拦截器怎么用"><a href="#axios拦截器怎么用" class="headerlink" title="axios拦截器怎么用"></a>axios拦截器怎么用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 请求拦截器   加载动画</span><br><span class="line">axios.interceptors.request.use(function (config) &#123;</span><br><span class="line">  console.log(config)</span><br><span class="line">  console.log(&apos;请求拦截器！&apos;)</span><br><span class="line"></span><br><span class="line">  //   在这里设置请求动画开始</span><br><span class="line">  Loading.service(&#123;</span><br><span class="line">    background:&apos;rgba(0,0,0,0.2)&apos;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  // 这里添加token认证</span><br><span class="line">  config.params = Object.assign(&#123;&#125;, config.params, &#123;</span><br><span class="line">    // token: getCookie(&apos;token&apos;),</span><br><span class="line">    // rnd: Math.random()  // 添加随机数防止浏览器缓存</span><br><span class="line">  &#125;)</span><br><span class="line">  return config</span><br><span class="line">&#125;, function (error) &#123;</span><br><span class="line"></span><br><span class="line">  console.log(&apos;请求出错的时候发生的事情！&apos;)</span><br><span class="line">  return Promise.reject(error)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 响应拦截器</span><br><span class="line">axios.interceptors.response.use(function (response) &#123;</span><br><span class="line">  console.log(&apos;响应拦截器！&apos;)</span><br><span class="line">  // router.push(&#123;                              // 如果后台返回的数据 显示用户没有登陆 那么控制用户跳转到登录页面</span><br><span class="line">  //   path: &apos;/b&apos;</span><br><span class="line">  // &#125;)</span><br><span class="line"></span><br><span class="line">  //  处理返回前端token过期、</span><br><span class="line">  //清空token  username</span><br><span class="line">  // 跳转到首页</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //  在这里设置请求动画结束</span><br><span class="line">  let loadingInstance = Loading.service();</span><br><span class="line">  loadingInstance.close();</span><br><span class="line"></span><br><span class="line">    return response</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;, function (error) &#123;</span><br><span class="line">  console.log(&apos;响应出错的时候触发的拦截器！&apos;)</span><br><span class="line">  return Promise.reject(error)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2017/09/13/64.node区局对象/" data-toggle="tooltip" data-placement="top"
-                           title="node全局对象">&larr; 上一篇</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2017/09/13/62.node流/" data-toggle="tooltip" data-placement="top"
-                           title="node.js流">下一篇 &rarr;</a>
+                        <a href="/2018/05/14/105.map/" data-toggle="tooltip" data-placement="top"
+                           title="javascript map VS forEach">下一篇 &rarr;</a>
                     </li>
                     
                 </ul>
@@ -275,7 +231,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#axios"><span class="toc-text">axios</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#axios拦截器是什么"><span class="toc-text">axios拦截器是什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#axios拦截器能做什么"><span class="toc-text">axios拦截器能做什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#axios拦截器怎么用"><span class="toc-text">axios拦截器怎么用</span></a></li></ol>
                 </div>
             </div>
         </div>
