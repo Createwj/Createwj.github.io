@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        vue-router｜undefined
+        stylus深入了解｜undefined
         
     </title>
 
-    <link rel="canonical" href="https://createwj.github.io/index.html/2018/05/03/100.vue-router实现机制/">
+    <link rel="canonical" href="https://createwj.github.io/index.html/2018/05/24/107.前端大杂烩/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -153,18 +153,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>vue-router</h1>
+                    <h1>stylus深入了解</h1>
                     
                     <span class="meta">
                          作者 新城
                         <span>
-                          日期 2018-05-03
+                          日期 2018-05-24
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#vue-router"
-                           title="vue-router">vue-router</a>
+                        <a class="tag" href="/tags/#-stylus"
+                           title="-stylus">-stylus</a>
                         
                     </div>
                 </div>
@@ -173,7 +173,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            vue-router
+            stylus深入了解
         </span>
     </div>
 </header>
@@ -184,22 +184,25 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p><a href="https://www.jianshu.com/p/f8699194ce26" target="_blank" rel="noopener">参考博客</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;hashchange&apos;, () =&gt; &#123;</span><br><span class="line">  // this.transitionTo(...)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-
+                <p><a href="http://www.zhangxinxu.com/jq/stylus/interpolation.php" target="_blank" rel="noopener">来源</a></p>
+<h3 id="1-选择器"><a href="#1-选择器" class="headerlink" title="1.选择器"></a>1.选择器</h3><p><strong>基本用法</strong><br>相比css省略了大括号 冒号 封号 如果习惯添加 stylus也不会报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//stylus</span><br><span class="line">body</span><br><span class="line">  color white</span><br><span class="line"></span><br><span class="line">//css</span><br><span class="line">body&#123;</span><br><span class="line">  color:white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>&amp;符号的基本使用</code><br>&amp;符号表示父元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// stylus</span><br><span class="line">body</span><br><span class="line">  color red</span><br><span class="line">  &amp;:hover</span><br><span class="line">    color #fff</span><br><span class="line"></span><br><span class="line">// css</span><br><span class="line">body&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">body:hover&#123;</span><br><span class="line">    color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h3><p>使用变量的时候 建议$开头命名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$font-size = 14px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size $font-size</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-插值-设置浏览器兼容性"><a href="#3-插值-设置浏览器兼容性" class="headerlink" title="3.插值(设置浏览器兼容性)"></a>3.插值(设置浏览器兼容性)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 兼容性设定</span><br><span class="line">vendor(prop, args)</span><br><span class="line">  -webkit-&#123;prop&#125; args</span><br><span class="line">  -moz-&#123;prop&#125; args</span><br><span class="line">  &#123;prop&#125; args</span><br><span class="line"></span><br><span class="line">bor-rad()</span><br><span class="line">  vendor(&apos;border-radius&apos;, arguments)</span><br><span class="line"></span><br><span class="line">button</span><br><span class="line">  bor-rad 14px</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 使用for循环 进行样式的设定</span><br><span class="line">table</span><br><span class="line">  for row in 1 2 3 4 5</span><br><span class="line">    tr:nth-child(&#123;row&#125;)</span><br><span class="line">      height: 10px * row</span><br></pre></td></tr></table></figure>
+<h3 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4.运算符"></a>4.运算符</h3><p>下列<code>运算符</code>优先级依次从最高到最低<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[]</span><br><span class="line">! ~ + -</span><br><span class="line">is defined</span><br><span class="line">** * / %</span><br><span class="line">+ -</span><br><span class="line">... ..</span><br><span class="line">&lt;= &gt;= &lt; &gt;</span><br><span class="line">in</span><br><span class="line">== is != is not isnt</span><br><span class="line">is a</span><br><span class="line">&amp;&amp; and || or</span><br><span class="line">?:</span><br><span class="line">= := ?= += -= *= /= %=</span><br><span class="line">not</span><br><span class="line">if unless</span><br></pre></td></tr></table></figure></p>
+<p>####一元运算符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!0  //true</span><br><span class="line">非0及真</span><br><span class="line">-5px // -5px</span><br><span class="line">--5px // 5px</span><br></pre></td></tr></table></figure></p>
+<p><code>not运算符最低</code></p>
+<p>####二元运算符</p>
+<h3 id="5-混合书写"><a href="#5-混合书写" class="headerlink" title="5.混合书写"></a>5.混合书写</h3><h3 id="6-方法"><a href="#6-方法" class="headerlink" title="6.方法"></a>6.方法</h3><h3 id="7-关键字参数"><a href="#7-关键字参数" class="headerlink" title="7.关键字参数"></a>7.关键字参数</h3><h3 id="8-内置方法"><a href="#8-内置方法" class="headerlink" title="8.内置方法"></a>8.内置方法</h3><h3 id="9-其余参数"><a href="#9-其余参数" class="headerlink" title="9.其余参数"></a>9.其余参数</h3><h3 id="10-注释"><a href="#10-注释" class="headerlink" title="10.注释"></a>10.注释</h3><h3 id="11-条件"><a href="#11-条件" class="headerlink" title="11.条件"></a>11.条件</h3><h3 id="12-迭代"><a href="#12-迭代" class="headerlink" title="12.迭代"></a>12.迭代</h3><h3 id="13-import"><a href="#13-import" class="headerlink" title="13.@import"></a>13.@import</h3><h3 id="14-media"><a href="#14-media" class="headerlink" title="14.@media"></a>14.@media</h3><h3 id="15-font-face"><a href="#15-font-face" class="headerlink" title="15.font-face"></a>15.font-face</h3><h3 id="16-keyframe"><a href="#16-keyframe" class="headerlink" title="16.keyframe"></a>16.keyframe</h3><h3 id="17-extent"><a href="#17-extent" class="headerlink" title="17.extent"></a>17.extent</h3>
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2018/05/03/101.移动端rem布局/" data-toggle="tooltip" data-placement="top"
-                           title="移动端布局参考地址">&larr; 上一篇</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2018/04/08/99.2018-4/" data-toggle="tooltip" data-placement="top"
-                           title="vue-cli[201804]使用小结">下一篇 &rarr;</a>
+                        <a href="/2018/05/21/106.axioslan拦截器/" data-toggle="tooltip" data-placement="top"
+                           title="axios拦截器的简单使用">下一篇 &rarr;</a>
                     </li>
                     
                 </ul>
@@ -234,7 +237,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-选择器"><span class="toc-text">1.选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-变量"><span class="toc-text">2.变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-插值-设置浏览器兼容性"><span class="toc-text">3.插值(设置浏览器兼容性)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-运算符"><span class="toc-text">4.运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-混合书写"><span class="toc-text">5.混合书写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-方法"><span class="toc-text">6.方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-关键字参数"><span class="toc-text">7.关键字参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-内置方法"><span class="toc-text">8.内置方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-其余参数"><span class="toc-text">9.其余参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-注释"><span class="toc-text">10.注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-条件"><span class="toc-text">11.条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-迭代"><span class="toc-text">12.迭代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-import"><span class="toc-text">13.@import</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-media"><span class="toc-text">14.@media</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-font-face"><span class="toc-text">15.font-face</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-keyframe"><span class="toc-text">16.keyframe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-extent"><span class="toc-text">17.extent</span></a></li></ol>
                 </div>
             </div>
         </div>
