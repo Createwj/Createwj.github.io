@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/about/">关于我</a>
+                            <a href="/Tags/">分类</a>
                         </li>
 							
 						
@@ -88,7 +88,7 @@
                         
 							
                         <li>
-                            <a href="/Tags/">分类</a>
+                            <a href="/about/">关于我</a>
                         </li>
 							
 						
@@ -184,7 +184,8 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p><code>forEach()</code>:针对每一个元素执行提供的函数<br><code>map()</code>:创建一个新数组，其中每一个元素由调用数组中的没一个元素执行提供的函数得来</p>
+                <p>forEach 在部分移动端兼容性不好尽量使用map 或者for 替代</p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p><code>forEach()</code>:针对每一个元素执行提供的函数<br><code>map()</code>:创建一个新数组，其中每一个元素由调用数组中的没一个元素执行提供的函数得来</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4,5]</span><br></pre></td></tr></table></figure>
 <h5 id="ForEach"><a href="#ForEach" class="headerlink" title="ForEach"></a>ForEach</h5><p><code>forEach</code> 不会返回有意义的数值。我们在回调函数中直接修改 <code>arr</code>的值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.forEach((num,index) =&gt; &#123;</span><br><span class="line">    return arr[index] = num * 2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
