@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        vue-cli[201804]使用小结｜undefined
+        vue定义全局组件｜undefined
         
     </title>
 
-    <link rel="canonical" href="https://createwj.github.io/index.html/2018/04/08/99.2018-4/">
+    <link rel="canonical" href="https://createwj.github.io/index.html/2018/06/06/111.vue定义全局组件/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -153,18 +153,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>vue-cli[201804]使用小结</h1>
+                    <h1>vue定义全局组件</h1>
                     
                     <span class="meta">
                          作者 新城
                         <span>
-                          日期 2018-04-08
+                          日期 2018-06-06
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#vue"
-                           title="vue">vue</a>
+                        <a class="tag" href="/tags/#vue定义全局组件"
+                           title="vue定义全局组件">vue定义全局组件</a>
                         
                     </div>
                 </div>
@@ -173,7 +173,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            vue-cli[201804]使用小结
+            vue定义全局组件
         </span>
     </div>
 </header>
@@ -184,46 +184,22 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h4 id="vue-cli使用心得"><a href="#vue-cli使用心得" class="headerlink" title="vue-cli使用心得"></a>vue-cli使用心得</h4><p>相比jquery有更高的性能<br>双向数据绑定极其方便快捷<br>使用vuex进行状态管理极其方便<br>使用axios发送请求<br>使用stylus进行编写css方便快捷</p>
-<p>打包编译的时候cdn配置 将打包的css js 自动添加前缀<br>transform的兼容在在移动比较差 使用的时候记得添加前缀 oppo手机坑<br>margin-top作用在父元素的 使用border-top 1px solid tranparemt 失效 建议使用 伪元素 befor content  你懂的<br>苹果手机不怎么支持fiexd定位 使用的时候小心坑</p>
-<p>资源过大的时候 使用路由懒加载</p>
-<h3 id="html2canvas-生成图片的时候图片不能跨域"><a href="#html2canvas-生成图片的时候图片不能跨域" class="headerlink" title="html2canvas 生成图片的时候图片不能跨域"></a><del>html2canvas 生成图片的时候图片不能跨域</del></h3><h3 id="html2canvas可以跨域"><a href="#html2canvas可以跨域" class="headerlink" title="html2canvas可以跨域"></a><code>html2canvas可以跨域</code></h3><p>使用img   crossorigin  属性canvas可以获取到 图片数据<br>image.setAttribute(‘crossorigin’, ‘anonymous’)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">html2canvas(document.querySelector(&quot;#capture&quot;),</span><br><span class="line">          &#123;                       // 允许跨域   允许污染画布</span><br><span class="line">            useCORS:true,         // image.setAttribute(&apos;crossorigin&apos;, &apos;anonymous&apos;)</span><br><span class="line">            allowTaint: true</span><br><span class="line">          &#125;</span><br><span class="line">        ).then(canvas=&gt;&#123;</span><br><span class="line">          document.body.appendChild(canvas)</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
-<h4 id="坑："><a href="#坑：" class="headerlink" title="坑："></a>坑：</h4><pre><code>需要生成图片的div 不能display：none
-只能用定位的方式将div隐藏掉 否则不能生成图片 生成一张空白的 png
-</code></pre><h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><pre><code>1.`将图片进行编码 变成base64 然后使用编码过后的base64进行生成图片  将生成的资源放到cdn`
-
- 缺点：打包文件过大 用户体验不好
- 优点：减小服务器压力
-
-~~2.`图片不需要跨域 直接将图片放到服务器上`~~
-
- 缺点；服务器压力大
- 优点：用户体验比前者好
-</code></pre><h4 id="其他解决办法："><a href="#其他解决办法：" class="headerlink" title="其他解决办法："></a>其他解决办法：</h4><pre><code>`使用canvas进行自己封装绘制`
-
-`缺点 开发周期长`
-
-`优点：可以自己定义  比较自由`
-</code></pre><h5 id="px2rem的学习"><a href="#px2rem的学习" class="headerlink" title="px2rem的学习"></a>px2rem的学习</h5><p><code>px2rem不支持stylu语法 只能使用css语法</code> 使用起来比较繁琐  stylu</p>
-<p>将1rem = 100px 设置成转换单位  在标准设计图纸上面就可以进行 按照缩小一百倍的尺寸进行还原设计图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;Boolean&#125; [normal = false] - 默认开启页面压缩以使页面高清;</span><br><span class="line"> * @param &#123;Number&#125; [baseFontSize = 100] - 基础fontSize, 默认100px;</span><br><span class="line"> * @param &#123;Number&#125; [fontscale = 1] - 有的业务希望能放大一定比例的字体;</span><br><span class="line"> */</span><br><span class="line">const win = window;</span><br><span class="line">export default win.flex = (normal, baseFontSize, fontscale) =&gt; &#123;</span><br><span class="line">  const _baseFontSize = baseFontSize || 100;</span><br><span class="line">  const _fontscale = fontscale || 1;</span><br><span class="line"></span><br><span class="line">  const doc = win.document;</span><br><span class="line">  const ua = navigator.userAgent;</span><br><span class="line">  const matches = ua.match(/Android[\S\s]+AppleWebkit\/(\d&#123;3&#125;)/i);</span><br><span class="line">  const UCversion = ua.match(/U3\/((\d+|\.)&#123;5,&#125;)/i);</span><br><span class="line">  const isUCHd = UCversion &amp;&amp; parseInt(UCversion[1].split(&apos;.&apos;).join(&apos;&apos;), 10) &gt;= 80;</span><br><span class="line">  const isIos = navigator.appVersion.match(/(iphone|ipad|ipod)/gi);</span><br><span class="line">  let dpr = win.devicePixelRatio || 1;</span><br><span class="line">  if (!isIos &amp;&amp; !(matches &amp;&amp; matches[1] &gt; 534) &amp;&amp; !isUCHd) &#123;</span><br><span class="line">    // 如果非iOS, 非Android4.3以上, 非UC内核, 就不执行高清, dpr设为1;</span><br><span class="line">    dpr = 1;</span><br><span class="line">  &#125;</span><br><span class="line">  const scale = normal ? 1 : 1 / dpr;</span><br><span class="line"></span><br><span class="line">  let metaEl = doc.querySelector(&apos;meta[name=&quot;viewport&quot;]&apos;);</span><br><span class="line">  if (!metaEl) &#123;</span><br><span class="line">    metaEl = doc.createElement(&apos;meta&apos;);</span><br><span class="line">    metaEl.setAttribute(&apos;name&apos;, &apos;viewport&apos;);</span><br><span class="line">    doc.head.appendChild(metaEl);</span><br><span class="line">  &#125;</span><br><span class="line">  metaEl.setAttribute(&apos;content&apos;, `width=device-width,user-scalable=no,initial-scale=$&#123;scale&#125;,maximum-scale=$&#123;scale&#125;,minimum-scale=$&#123;scale&#125;`);</span><br><span class="line">  doc.documentElement.style.fontSize = normal ? &apos;50px&apos; : `$&#123;_baseFontSize / 2 * dpr * _fontscale&#125;px`;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">flex(false,100,1)   // 调用函数进行适配       1rem = 100px</span><br></pre></td></tr></table></figure></p>
-<p>// 可以再厉添加    添加窗口监听事件 进行试试监听窗口的变化</p>
-<p>不需要手动添加适口 代码会自动添加到当前html页面头部</p>
+                <p><em>类似于Element的全局消息提醒⏰组件使用方法</em><br>this.$message({<br>    message: res,<br>    center: true<br>})</p>
+<p><code>全局提示组件</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import popWindow from &apos;@/base/pop-window/pop-window&apos;</span><br><span class="line">const popMessage=&#123;</span><br><span class="line">    install:function (Vue) &#123;</span><br><span class="line">        Vue.component(&apos;popMessage&apos;,popWindow)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Vue.use(popMessage)</span><br></pre></td></tr></table></figure>
+<p><code>定义全局方法 全局弹窗组件 二次确认框等</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.popMess = function (res)&#123;</span><br><span class="line">  console.log(res)</span><br><span class="line">  console.log(&apos;全局消息提示方法&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>extension://ccfjcepmiaackkccabgeeegeklgifffd/imgs/map/tip-arrow-top.png&quot;);”&gt;</p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2018/05/03/100.vue-router实现机制/" data-toggle="tooltip" data-placement="top"
-                           title="vue-router">&larr; 上一篇</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2018/03/30/98.vueComponent/" data-toggle="tooltip" data-placement="top"
-                           title="vue-cli 基本安装配置(个人习惯)">下一篇 &rarr;</a>
+                        <a href="/2018/06/06/110.express代理/" data-toggle="tooltip" data-placement="top"
+                           title="express">下一篇 &rarr;</a>
                     </li>
                     
                 </ul>
@@ -258,7 +234,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue-cli使用心得"><span class="toc-text">vue-cli使用心得</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html2canvas-生成图片的时候图片不能跨域"><span class="toc-text">html2canvas 生成图片的时候图片不能跨域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html2canvas可以跨域"><span class="toc-text">html2canvas可以跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#坑："><span class="toc-text">坑：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决："><span class="toc-text">解决：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他解决办法："><span class="toc-text">其他解决办法：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#px2rem的学习"><span class="toc-text">px2rem的学习</span></a></li></ol></li></ol>
+                    
                 </div>
             </div>
         </div>

@@ -195,16 +195,23 @@
 <h4 id="接收文件并转发"><a href="#接收文件并转发" class="headerlink" title="接收文件并转发"></a>接收文件并转发</h4><p>使用axiox拦截器的时候 上传文件可能失效<br>取消拦截器的使用<br>代理服务器可以直接从客户端获取cookie 从而判断客户端是否处于登陆状态</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// npm install multer</span><br><span class="line"></span><br><span class="line">const multer  = require(&apos;multer&apos;)</span><br><span class="line">const upload = multer()</span><br><span class="line"></span><br><span class="line">  // 文件上传格式预览</span><br><span class="line">      app.post(&apos;/api/upLoadFile&apos;,upload.single(&apos;file&apos;),function(req,res)&#123;</span><br><span class="line">        var url = requireUrl + &apos;/import/expense/&apos;+req.body.id+&apos;/preview?token=&apos;+req.cookies.token</span><br><span class="line">        var config = &#123;</span><br><span class="line">          headers: &#123;&apos;Content-Type&apos;: &apos;multipart/form-data; charset=utf-8; boundary=&quot;another cool boundary&quot;;&apos;&#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        axios.post(url,req.file,config).then((response)=&gt;&#123;</span><br><span class="line">          res.json(response.data)</span><br><span class="line">        &#125;).catch((e)=&gt;&#123;</span><br><span class="line">          console.log(e)</span><br><span class="line">          res.json(&#123;error:&#123;message:&apos;文件上传失败&apos;,code:500&#125;&#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="结合axios发送http请求"><a href="#结合axios发送http请求" class="headerlink" title="结合axios发送http请求"></a>结合axios发送http请求</h4><p><code>node端使用axios发送http请求</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.get(&apos;/api/...&apos;,function(req,res)&#123;</span><br><span class="line">   var url = &apos;http://www.baidu.com&apos;</span><br><span class="line">   axios.get(url,&#123;params:&#123;req.query&#125;&#125;).then((response)=&gt;&#123;</span><br><span class="line">       res.json(response.data)</span><br><span class="line">   &#125;).catch((e)=&gt;&#123;</span><br><span class="line">   //这里可以自己定义返回的错误类型数据</span><br><span class="line">       console.log(e)</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>使用buffer编码 将文件读写进内存中 然后直接返回用户<br>当用户流量大的时候 IO流 操作比较慢 影响用户访问数量</p>
+<p><strong>记住url  该方法暂用内存 文件大小不能过大  利用牺牲内存的方法  去换取用户访问速度流量</strong></p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
+                    <li class="previous">
+                        <a href="/2018/06/06/111.vue定义全局组件/" data-toggle="tooltip" data-placement="top"
+                           title="vue定义全局组件">&larr; 上一篇</a>
+                    </li>
+                    
                     
                     <li class="next">
-                        <a href="/2018/05/29/109.快应用/" data-toggle="tooltip" data-placement="top"
-                           title="快应用">下一篇 &rarr;</a>
+                        <a href="/2018/05/25/108.open/" data-toggle="tooltip" data-placement="top"
+                           title="微信登陆使用到的open方法">下一篇 &rarr;</a>
                     </li>
                     
                 </ul>
