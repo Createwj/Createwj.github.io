@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="描述">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="新城" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        nginx｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://createwj.github.io/index.html/2018/11/26/124.mginx/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/WechatIMG10.jpeg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    新城
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">分类</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/about/">关于我</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>nginx</h1>
+                    
+                    <span class="meta">
+                         作者 新城
+                        <span>
+                          日期 2018-11-26
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#koa2"
+                           title="koa2">koa2</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            nginx
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p><a href="https://www.cnblogs.com/meng1314-shuai/p/8335140.html" target="_blank" rel="noopener">参考</a></p>
+<h1 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h1><p>Homebrew是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cd `brew --prefix`</span><br><span class="line">$ rm -rf Cellar</span><br><span class="line">$ brew prune</span><br><span class="line">$ rm `git ls-files`</span><br><span class="line">$ rm -r Library/Homebrew Library/Aliases Library/Formula Library/Contributions</span><br><span class="line">$ rm -rf .git</span><br><span class="line">$ rm -rf ~/Library/Caches/Homebrew</span><br></pre></td></tr></table></figure>
+<h3 id="homebrew基本使用"><a href="#homebrew基本使用" class="headerlink" title="homebrew基本使用"></a>homebrew基本使用</h3><p>安装任意包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;packageName&gt;</span><br></pre></td></tr></table></figure></p>
+<p>安装node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure></p>
+<p>卸载任意包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew uninstall &lt;packageName&gt;</span><br></pre></td></tr></table></figure></p>
+<p>查询任意包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew search &lt;packageName&gt;</span><br></pre></td></tr></table></figure></p>
+<p>查看安装包列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew list</span><br></pre></td></tr></table></figure></p>
+<p>查看包的信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info &lt;packageName&gt;</span><br></pre></td></tr></table></figure></p>
+<p>更新Homebrew<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure></p>
+<p>查看版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew -v</span><br></pre></td></tr></table></figure></p>
+<p>Homebrew 帮助信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew -h</span><br></pre></td></tr></table></figure></p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>Mac OS X 10.11系统之后 安装软件使用的时候 需要root权限</p>
+<p>对/use/local目录下的文件读写进行root用户授权<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chown -R $USER /usr/local</span><br></pre></td></tr></table></figure></p>
+<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 安装nginx</span><br><span class="line">brew install nginx</span><br><span class="line"></span><br><span class="line"># 打开nginx的安装目录</span><br><span class="line">open /usr/local/etc/nginx/</span><br><span class="line">sudo nginx -c /Applications/Xcode.app/Contents/Developer/usr/share/xcs/Nginx/conf/nginx.conf</span><br><span class="line">open /usr/local/Cellar/nginx</span><br></pre></td></tr></table></figure>
+<p><img src="https://images2017.cnblogs.com/blog/965467/201801/965467-20180124151353990-366531789.png" alt=""></p>
+<h3 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h3><p>pwa<br>nginx<br>ts<br>nuxt<br>koa<br>mongodb<br>linux<br><a href="mailto:vue-cli@3.0" target="_blank" rel="noopener">vue-cli@3.0</a> + ts</p>
+<p>安装nginx<br><a href="https://www.jianshu.com/p/1cad13e57c43" target="_blank" rel="noopener">https://www.jianshu.com/p/1cad13e57c43</a></p>
+<p>linux安装mysql  基本满足安装成功的需求 小坑 自行百度<br><a href="http://www.cnblogs.com/bookwed/p/5896619.html" target="_blank" rel="noopener">http://www.cnblogs.com/bookwed/p/5896619.html</a></p>
+<p>安装ghost<br><a href="https://www.jianshu.com/p/77953f7f076b" target="_blank" rel="noopener">https://www.jianshu.com/p/77953f7f076b</a></p>
+<p>rpm -ql nginx</p>
+<p>etc/nginx</p>
+<p>service nginx start</p>
+<p>cp -r mysql-5.6.33-linux-glibc2.5-x86_64 /usr/local/mysql<br>复制文件夹下面的文件 到usr/local/mysql 下面 相对根目录</p>
+<p>域名绑定 ip腾讯云</p>
+<p>安装nginx mysql 绑定域名  域名备案  安装node</p>
+<p>建立软连接 ndoe npm<br>ln -s a b 中的 a 就是源文件，b是链接文件名,其作用是当进入b目录，实际上是链接进入了a目录</p>
+<p>ln -s /usr/local/nodejs/bin/npm /usr/local/bin/<br>ln -s /usr/local/nodejs/bin/node /usr/local/bin/</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2019/02/18/126.vuex/" data-toggle="tooltip" data-placement="top"
+                           title="2019 基本作息时间">&larr; 上一篇</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/09/25/123.koa/" data-toggle="tooltip" data-placement="top"
+                           title="koa2">下一篇 &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDIxOS82Nzc0">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#homebrew"><span class="toc-text">homebrew</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载"><span class="toc-text">卸载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#homebrew基本使用"><span class="toc-text">homebrew基本使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#启动nginx"><span class="toc-text">启动nginx</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5604698597">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Createwj">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 新城 2019
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">来访次数: <span id="busuanzi_value_site_pv"></span> 次</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://createwj.github.io/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://createwj.github.io/VUE2.0-sell/xincheng.jpeg">
+</body>
+
+</html>

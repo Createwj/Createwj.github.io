@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/about/">关于我</a>
+                            <a href="/Tags/">分类</a>
                         </li>
 							
 						
@@ -88,7 +88,7 @@
                         
 							
                         <li>
-                            <a href="/Tags/">分类</a>
+                            <a href="/about/">关于我</a>
                         </li>
 							
 						
@@ -281,6 +281,29 @@
 
 <div class="post-preview "
      style="background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')">
+    <a href="/2017/08/29/20.pythonIO/">
+        <h2 class="post-title">
+            IO编程
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2017-08-29
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                IO编程文件的读写    读写文件前，我们先必须了解一下，在磁盘上读写文件的功能都是由操作系统提供的，现代操作系统不允许普通的程序直接操作磁盘，所以，读写文件就是请求操作系统打开一个文件对象（通常称为文件描述符），然后，通过操作系统提供的接口从这个文件对象中读取数据（读文件），或者把数据写入这个..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview "
+     style="background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')">
     <a href="/2017/08/28/19.python单元测试/">
         <h2 class="post-title">
             python单元测试
@@ -355,9 +378,9 @@ Demo比如对函数abs()进行测试：方法：    1.输入正数1，2.2，0.99
 
 <div class="post-preview "
      style="background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')">
-    <a href="/2017/08/27/16.python枚举类元类/">
+    <a href="/2017/08/27/15.python错误、调试和测试/">
         <h2 class="post-title">
-            python枚举类元类
+            python错误，调试和测试
         </h2>
         <p class="post-meta">
             <i class="fa fa-calendar" aria-hidden="true"></i> 2017-08-27
@@ -365,8 +388,7 @@ Demo比如对函数abs()进行测试：方法：    1.输入正数1，2.2，0.99
         
         <div class="post-content-preview">
             <p>
-                使用枚举类一般情况，我们定义一些全结局常量的时候，习惯使用大写字母来定义如下123JAN = 1FEB = 2MAR = 3
-处是简单，缺点是类型是int，并且仍然是变量。更好的方法是为这样的枚举类型定义一个class类型，然后，每个常量都是class的一个唯一实例。Python提供了Enum类..
+                错误，调试和测试（python 程序错误和异常）错误处理过  同JS123456789try:                 #试图执行的代码    print(&apos;try...&apos;)    r = 10 / 0    print(&apos;result:&apos;, r)..
             </p>
         </div>
     </a>
@@ -379,9 +401,9 @@ Demo比如对函数abs()进行测试：方法：    1.输入正数1，2.2，0.99
 
 <div class="post-preview "
      style="background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')">
-    <a href="/2017/08/27/15.python错误、调试和测试/">
+    <a href="/2017/08/27/16.python枚举类元类/">
         <h2 class="post-title">
-            python错误，调试和测试
+            python枚举类元类
         </h2>
         <p class="post-meta">
             <i class="fa fa-calendar" aria-hidden="true"></i> 2017-08-27
@@ -389,7 +411,8 @@ Demo比如对函数abs()进行测试：方法：    1.输入正数1，2.2，0.99
         
         <div class="post-content-preview">
             <p>
-                错误，调试和测试（python 程序错误和异常）错误处理过  同JS123456789try:                 #试图执行的代码    print(&apos;try...&apos;)    r = 10 / 0    print(&apos;result:&apos;, r)..
+                使用枚举类一般情况，我们定义一些全结局常量的时候，习惯使用大写字母来定义如下123JAN = 1FEB = 2MAR = 3
+处是简单，缺点是类型是int，并且仍然是变量。更好的方法是为这样的枚举类型定义一个class类型，然后，每个常量都是class的一个唯一实例。Python提供了Enum类..
             </p>
         </div>
     </a>
@@ -489,31 +512,6 @@ python面向对象高级编程多重继承、定制类、元类
                     
 python 获取对象信息获取对象类型 判断对象是什么类型,并且知道对象有哪些方法
 判断对象是什么类型 使用type()基本类型都可以用type()判断123type(123)  #&lt;class int&gt;type(&apos;str&apos;)  #&lt;class s..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')">
-    <a href="/2017/08/24/10.python继承多态/">
-        <h2 class="post-title">
-            python继承多态
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2017-08-24
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                    
-python 继承数据封装、继承和多态是面向对象的三大特点
-1234567891011class Animal(object):   #**定义动物类**    def run(self):        print(&apos;Animal is running...&apos;)c..
             </p>
         </div>
     </a>
@@ -647,7 +645,7 @@ python 继承数据封装、继承和多态是面向对象的三大特点
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; 新城 2018
+                    Copyright &copy; 新城 2019
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">来访次数: <span id="busuanzi_value_site_pv"></span> 次</span>
                     <br>
