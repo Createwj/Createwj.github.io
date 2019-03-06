@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="描述">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="新城" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        easy-mock｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://createwj.github.io/index.html/2019/03/05/129.easy-mock/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/WechatIMG10.jpeg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    新城
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">分类</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/about/">关于我</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://createwj.github.io/VUE2.0-sell/4600475-3b56296dffbbbbdb.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>easy-mock</h1>
+                    
+                    <span class="meta">
+                         作者 新城
+                        <span>
+                          日期 2019-03-05
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#mock"
+                           title="mock">mock</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            easy-mock
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h3 id="easy-mock简介"><a href="#easy-mock简介" class="headerlink" title="easy-mock简介"></a><a href="https://www.easy-mock.com/" target="_blank" rel="noopener">easy-mock</a>简介</h3><p>之前都是自己写加接口 很湿费劲 这个很方便 爱不释手</p>
+<h3 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h3><p>基本语法 会随机发生变化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &apos;basedate&apos;: &#123;</span><br><span class="line">    &quot;string|1-2&quot;: &quot;@string&quot;,</span><br><span class="line">    &quot;integer&quot;: &quot;@integer(10, 30)&quot;,</span><br><span class="line">    &quot;float&quot;: &quot;@float(60, 100, 2, 2)&quot;,</span><br><span class="line">    &quot;boolean&quot;: &quot;@boolean&quot;,</span><br><span class="line">    &quot;date&quot;: &quot;@date(yyyy-MM-dd)&quot;,</span><br><span class="line">    &quot;datetime&quot;: &quot;@datetime&quot;,</span><br><span class="line">    &quot;now&quot;: &quot;@now&quot;,</span><br><span class="line">    &quot;url&quot;: &quot;@url&quot;,</span><br><span class="line">    &quot;email&quot;: &quot;@email&quot;,</span><br><span class="line">    &quot;region&quot;: &quot;@region&quot;,</span><br><span class="line">    &quot;city&quot;: &quot;@city&quot;,</span><br><span class="line">    &quot;province&quot;: &quot;@province&quot;,</span><br><span class="line">    &quot;county&quot;: &quot;@county&quot;,</span><br><span class="line">    &quot;upper&quot;: &quot;@upper(@title)&quot;,</span><br><span class="line">    &quot;guid&quot;: &quot;@guid&quot;,</span><br><span class="line">    &quot;id&quot;: &quot;@id&quot;,</span><br><span class="line">    &quot;image&quot;: &quot;@image(200x200)&quot;,</span><br><span class="line">    &quot;title&quot;: &quot;@title&quot;,</span><br><span class="line">    &quot;cparagraph&quot;: &quot;@cparagraph&quot;,</span><br><span class="line">    &quot;csentence&quot;: &quot;@csentence&quot;,</span><br><span class="line">    &quot;range&quot;: &quot;@range(2, 10)&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;base&quot;: &#123;</span><br><span class="line">    &quot;range&quot;: &quot;@range(3, 7)&quot;,</span><br><span class="line">    &quot;string&quot;: &quot;@string(7, 20)&quot;,</span><br><span class="line">    &quot;character&quot;: &quot;@character(&apos;abcde&apos;)&quot;,</span><br><span class="line">    &quot;float&quot;: &quot;@float(60, 100)&quot;,</span><br><span class="line">    &quot;integer&quot;: &quot;@integer(60, 100)&quot;,</span><br><span class="line">    &quot;natural&quot;: &quot;@natural(60, 100)&quot;,</span><br><span class="line">    &quot;boolean&quot;: &quot;@boolean&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;date&quot;: &#123;</span><br><span class="line">    &quot;date&quot;: &quot;@date&quot;,</span><br><span class="line">    &quot;time&quot;: &quot;@time&quot;,</span><br><span class="line">    &quot;datetime&quot;: &quot;@datetime&quot;,</span><br><span class="line">    &quot;now&quot;: &quot;@now&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;images&quot;: &#123;</span><br><span class="line">    &quot;ajax|1-10&quot;: &quot;★&quot;,</span><br><span class="line">    &quot;string2|3&quot;: &quot;★★&quot;,</span><br><span class="line">    &quot;number|+1&quot;: 202,</span><br><span class="line">    &quot;number2|1-100.1-10&quot;: 1,</span><br><span class="line">    &quot;boolean|1&quot;: true,</span><br><span class="line">    &quot;regexp&quot;: /[a-z][A-Z][0-9]/,</span><br><span class="line">    &quot;absolutePath&quot;: &quot;@/string @/user/name&quot;,</span><br><span class="line">    &quot;user&quot;: &#123;</span><br><span class="line">      &quot;name&quot;: &quot;demo&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;object|2&quot;: &#123;</span><br><span class="line">      &quot;310000&quot;: &quot;上海市&quot;,</span><br><span class="line">      &quot;320000&quot;: &quot;江苏省&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;array|1&quot;: [&quot;AMD&quot;]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;image&quot;: &#123;</span><br><span class="line">    &quot;image&quot;: &quot;@image(&apos;200x100&apos;, &apos;#50B347&apos;, &apos;#FFF&apos;, &apos;EasyMock&apos;)&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;color&quot;: &#123;</span><br><span class="line">    &quot;color&quot;: &quot;@color&quot;,</span><br><span class="line">    &quot;hex&quot;: &quot;@hex&quot;,</span><br><span class="line">    &quot;rgb&quot;: &quot;@rgb&quot;,</span><br><span class="line">    &quot;rgba&quot;: &quot;@rgba&quot;,</span><br><span class="line">    &quot;hsl&quot;: &quot;@hsl&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;text&quot;: &#123;</span><br><span class="line">    &quot;paragraph&quot;: &quot;@paragraph(1, 3)&quot;,</span><br><span class="line">    &quot;sentence&quot;: &quot;@sentence(3, 5)&quot;,</span><br><span class="line">    &quot;word&quot;: &quot;@word(3, 5)&quot;,</span><br><span class="line">    &quot;title&quot;: &quot;@title(3, 5)&quot;,</span><br><span class="line">    &quot;cparagraph&quot;: &quot;@cparagraph(1, 3)&quot;,</span><br><span class="line">    &quot;csentence&quot;: &quot;@csentence(3, 5)&quot;,</span><br><span class="line">    &quot;cword&quot;: &quot;@cword(&apos;零一二三四五六七八九十&apos;, 5, 7)&quot;,</span><br><span class="line">    &quot;ctitle&quot;: &quot;@ctitle(3, 5)&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;name&quot;: &#123;</span><br><span class="line">    &quot;first&quot;: &quot;@first&quot;,</span><br><span class="line">    &quot;last&quot;: &quot;@last&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;@name&quot;,</span><br><span class="line">    &quot;cfirst&quot;: &quot;@cfirst&quot;,</span><br><span class="line">    &quot;clast&quot;: &quot;@clast&quot;,</span><br><span class="line">    &quot;cname&quot;: &quot;@cname&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;web&quot;: &#123;</span><br><span class="line">    &quot;url&quot;: &quot;@url&quot;,</span><br><span class="line">    &quot;domain&quot;: &quot;@domain&quot;,</span><br><span class="line">    &quot;protocol&quot;: &quot;@protocol&quot;,</span><br><span class="line">    &quot;tld&quot;: &quot;@tld&quot;,</span><br><span class="line">    &quot;email&quot;: &quot;@email&quot;,</span><br><span class="line">    &quot;ip&quot;: &quot;@ip&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;address&quot;: &#123;</span><br><span class="line">    &quot;region&quot;: &quot;@region&quot;,</span><br><span class="line">    &quot;province&quot;: &quot;@province&quot;,</span><br><span class="line">    &quot;city&quot;: &quot;@city(true)&quot;,</span><br><span class="line">    &quot;county&quot;: &quot;@county(true)&quot;,</span><br><span class="line">    &quot;zip&quot;: &quot;@zip&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;helper&quot;: &#123;</span><br><span class="line">    &quot;capitalize&quot;: &quot;@capitalize(&apos;hello&apos;)&quot;,</span><br><span class="line">    &quot;upper&quot;: &quot;@upper(&apos;hello&apos;)&quot;,</span><br><span class="line">    &quot;lower&quot;: &quot;@lower(&apos;HELLO&apos;)&quot;,</span><br><span class="line">    &quot;pick&quot;: &quot;@pick([&apos;a&apos;, &apos;e&apos;, &apos;i&apos;, &apos;o&apos;, &apos;u&apos;])&quot;,</span><br><span class="line">    &quot;shuffle&quot;: &quot;@shuffle([&apos;a&apos;, &apos;e&apos;, &apos;i&apos;, &apos;o&apos;, &apos;u&apos;])&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;miscellaneous&quot;: &#123;</span><br><span class="line">    &quot;id&quot;: &quot;@id&quot;,</span><br><span class="line">    &quot;guid&quot;: &quot;@guid&quot;,</span><br><span class="line">    &quot;increment&quot;: &quot;@increment(1000)&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="参数配置"><a href="#参数配置" class="headerlink" title="参数配置"></a>参数配置</h4><p>get<br>/:id/index</p>
+<p>请求的时候可以配置参数</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2019/02/18/126.vuex/" data-toggle="tooltip" data-placement="top"
+                           title="2019 基本作息时间">下一篇 &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDIxOS82Nzc0">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#easy-mock简介"><span class="toc-text">easy-mock简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用指南"><span class="toc-text">使用指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数配置"><span class="toc-text">参数配置</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5604698597">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Createwj">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 新城 2019
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">来访次数: <span id="busuanzi_value_site_pv"></span> 次</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://createwj.github.io/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://createwj.github.io/VUE2.0-sell/xincheng.jpeg">
+</body>
+
+</html>
